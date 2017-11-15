@@ -109,6 +109,7 @@ Display 6-wire cable</td>
 
 </table>
 
+
 <table>
 
 <tbody>
@@ -119,14 +120,14 @@ Display 6-wire cable</td>
 
 ![Bubble_number_01](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_01.png)
 
-Pico i.MX7Dual development board
+Pico i.MX7Dual 开发板
 </td>
 
 <td>
 
 ![Bubble_number_02](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_02.png)
 
-Standoffs (x2) and screws (x5) for the Rainbow HAT</td>
+Rainbow HAT 板有 螺丝 (x2) and 螺帽 (x5) </td>
 
 </tr>
 
@@ -136,13 +137,13 @@ Standoffs (x2) and screws (x5) for the Rainbow HAT</td>
 
 ![Bubble_number_03](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_03.png)
 
-Rainbow HAT</td>
+Rainbow HAT 板</td>
 
 <td>
 
 ![Bubble_number_04](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_04.png)
 
-USB-C cable</td>
+USB-C 线</td>
 
 </tr>
 
@@ -152,13 +153,13 @@ USB-C cable</td>
 
 ![Bubble_number_05](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_05.png)
 
-Wifi antenna</td>
+Wifi 天线</td>
 
 <td>
 
 ![Bubble_number_06](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_06.png)
 
-Antenna extender cable</td>
+天线延长线</td>
 
 </tr>
 
@@ -168,13 +169,13 @@ Antenna extender cable</td>
 
 ![Bubble_number_07](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_07.png)
 
-Camera module</td>
+摄像头模组</td>
 
 <td>
 
 ![Bubble_number_08](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_08.png)
 
-Camera module cable</td>
+摄像头模组接线</td>
 
 </tr>
 
@@ -184,13 +185,13 @@ Camera module cable</td>
 
 ![Bubble_number_09](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_09.png)
 
-5" multi-touch display</td>
+5" 多点触摸屏</td>
 
 <td>
 
 ![Bubble_number_10](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_10.png)
 
-Display 6-wire cable</td>
+屏线（6pin)</td>
 
 </tr>
 
