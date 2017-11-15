@@ -127,7 +127,7 @@ Pico i.MX7Dual 开发板
 
 ![Bubble_number_02](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_02.png)
 
-Rainbow HAT 板有 螺丝 (x2) and 螺帽 (x5) </td>
+Rainbow HAT 板有  螺帽(x2) and 螺丝 (x5) </td>
 
 </tr>
 
@@ -204,7 +204,11 @@ Wifi 天线</td>
 
 Connect the parts in the following order. Note that some versions of the Pico Pro Maker Kit do not include the Rainbow HAT, camera, and/or multi-touch display.
 
+按照下面顺序来安装各个部件。 要注意有些版本的 Pico Pro Maker 套件 不包括 Rainbow HAT 板，摄像头，以及多点触摸屏
+
 ### Wifi antenna
+
+### Wifi 天线
 
 Connect the wifi antenna to the development board:
 
