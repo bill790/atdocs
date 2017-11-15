@@ -411,19 +411,29 @@ If you have a Rainbow HAT, follow these instructions to download and run a [samp
 
 ## Next steps
 
+## 下一步
+
 * * *
 
 *   Try one of the [other code samples](https://developer.android.google.cn/things/sdk/samples.html). Remember to uninstall any existing samples from the development board before installing a new one, so that one does not interfere with the other. For example, to uninstall the previous samples from the command line:
 
         adb uninstall com.example.androidthings.button
+        
+*   试试 [其他代码例子](https://developer.android.google.cn/things/sdk/samples.html)中的一个例子. 记住安装新的例子之前卸载掉开发板上其他任何安装过的例子, 这样就不会例子之间互相干扰. 例如, 卸载时命令行敲如下命令:
+
+        adb uninstall com.example.androidthings.button
 
 *   Take a look at the [Peripherals codelab](https://codelabs.developers.google.com/codelabs/androidthings-peripherals) or learn how to [build your first device](https://developer.android.google.cn/things/training/first-device/index.html).
 
+*   看一看 [代码实验室里的外设部分](https://codelabs.developers.google.com/codelabs/androidthings-peripherals) 或者去学一下 [打造自己的第一个设备](https://developer.android.google.cn/things/training/first-device/index.html).
+
 *   Connect with the community at [g.co/iotdev](https://g.co/iotdev).
+
+*   与社区在这里联系 [g.co/iotdev](https://g.co/iotdev)。
 
 ## Troubleshooting
 
-## 问题
+## 问题解决
 
 * * *
 
@@ -437,4 +447,4 @@ If you have a Rainbow HAT, follow these instructions to download and run a [samp
 
 You can [report bugs](https://issuetracker.google.com/issues/new?component=192720&template=847005) and [suggest new features](https://issuetracker.google.com/issues/new?component=192720&template=848805) with the Android Things issue tracker.
 
-你可以用 Android Things issue tracker 这个工具来 [报告bug](https://issuetracker.google.com/issues/new?component=192720&template=847005) 和 [提新特性建议](https://issuetracker.google.com/issues/new?component=192720&template=848805) with the Android Things issue tracker.
+你可以用 Android Things issue tracker 这个工具来 [报告bug](https://issuetracker.google.com/issues/new?component=192720&template=847005) 和 [提新特性建议](https://issuetracker.google.com/issues/new?component=192720&template=848805) 。
