@@ -423,11 +423,18 @@ If you have a Rainbow HAT, follow these instructions to download and run a [samp
 
 ## Troubleshooting
 
+## 问题
+
 * * *
 
 *   Some USB ports don't provide enough power for the development board. If your board will not boot (or reboot) after some time, try using a powered USB hub or a USB 3.0 port.
 
+*   一些 USB 接口不能提供足够的电力给开发板。 如果你的板子上电后启动不了（或者重启后），试试USB hub 或者换一个 USB 3.0 的接口
+
 *   If you are using a native USB-C port on your host machine and the development board keeps rebooting, you may need to use a USB-A port on your host machine instead. You will need a USB-A to USB-C adapter cable.
+
+*  如果你在用你电脑上的 USB-C 接口接开发板会不断重启的话， 你可能需要用你的电脑上的 USB-A 接口 。 这样你需要一个 USB-A 到 USB-C 的转接线。
 
 You can [report bugs](https://issuetracker.google.com/issues/new?component=192720&template=847005) and [suggest new features](https://issuetracker.google.com/issues/new?component=192720&template=848805) with the Android Things issue tracker.
 
+你可以用 Android Things issue tracker 这个工具来 [报告bug](https://issuetracker.google.com/issues/new?component=192720&template=847005) 和 [提新特性建议](https://issuetracker.google.com/issues/new?component=192720&template=848805) with the Android Things issue tracker.
