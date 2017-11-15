@@ -381,31 +381,53 @@ Connect the display to the development board:
 
 ### Final result
 
+### 最后步骤
+
 Your kit is now assembled. You will connect the USB-C cable when you flash Android Things on your board.
+
+你的套件现在装好了。 你在烧录 Android Things 映像到板子上时需要连上 USB-C 线
 
 ![final_result](https://developer.android.google.cn/things/images/imx7d-kit/final_result.jpg)
 
 ## Install Android Things
 
+## 安装 Android Things
 * * *
 
 Follow the hardware setup [instructions](https://developer.android.google.cn/things/hardware/imx7d.html) to flash the latest version of Android Things on your i.MX7D development board.
 
+按照硬件安装 [说明](https://developer.android.google.cn/things/hardware/imx7d.html) 把最新版本的 Android Things 烧到你的 i.MX7D 开发板上去。 
+
 ## Blink an LED
+
+## 点亮一个LED
 
 * * *
 
 If you have a Rainbow HAT, follow these instructions to download and run a [sample](https://github.com/androidthings/sample-button/) that blinks one of the HAT's LEDs. If you don't have a Rainbow HAT, you can [connect an LED and button](https://developer.android.google.cn/things/training/first-device/connect-hardware.html) to the development board and run the sample.
 
+If you have a Rainbow HAT, follow these instructions to download and run a [sample](https://github.com/androidthings/sample-button/) that blinks one of the HAT's LEDs. If you don't have a Rainbow HAT, you can [connect an LED and button](https://developer.android.google.cn/things/training/first-device/connect-hardware.html) to the development board and run the sample.
+
 1.  Download and unzip the [sample-button](https://github.com/androidthings/sample-button/archive/master.zip) project to the directory of your choice.
+
+1.  Download and unzip the [sample-button](https://github.com/androidthings/sample-button/archive/master.zip) project to the directory of your choice.
+
+2.  Run the project using either of the following:
 
 2.  Run the project using either of the following:
 
     *   In Android Studio, select **File > Open** and select the directory where you unzipped the sample. Select **Run > Run 'app'**.
 
+    *   In Android Studio, select **File > Open** and select the directory where you unzipped the sample. Select **Run > Run 'app'**.
+
     *   From the command line:
 
             cd sample-button-master./gradlew assembleDebugadb install -g -r app/build/outputs/apk/app-debug.apkadb shell am start com.example.androidthings.button/.ButtonActivity
+
+ *   From the command line:
+
+            cd sample-button-master./gradlew assembleDebugadb install -g -r app/build/outputs/apk/app-debug.apkadb shell am start com.example.androidthings.button/.ButtonActivity
+3.  Press the "A" button on the Rainbow HAT and the red LED will light up. If you connected an external button and LED, press the button to light the LED.
 
 3.  Press the "A" button on the Rainbow HAT and the red LED will light up. If you connected an external button and LED, press the button to light the LED.
 
