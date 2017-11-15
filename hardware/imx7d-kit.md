@@ -16,7 +16,7 @@ Open the box and make sure you have all of the components in the kit. You will a
 
 <aside class="note">**Note:** <span>Some versions of the Pico Pro Maker Kit do not include the Rainbow HAT, camera, and/or multi-touch display. The full kit is shown below.</span></aside>
 
-<aside class="note">**Note:** <span>Some versions of the Pico Pro Maker Kit do not include the Rainbow HAT, camera, and/or multi-touch display. The full kit is shown below.</span></aside>
+<aside class="note">**Note:** <span>某些版本的 Pico Pro Maker 套装不包括 Rainbow HAT板, 摄像头, 以及触摸屏. 下面的是完全套装.</span></aside>
 
 ![inventory](https://developer.android.google.cn/things/images/imx7d-kit/inventory.jpg)
 
