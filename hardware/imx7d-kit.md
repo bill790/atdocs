@@ -109,6 +109,94 @@ Display 6-wire cable</td>
 
 </table>
 
+<table>
+
+<tbody>
+
+<tr>
+
+<td style="width:450px;">
+
+![Bubble_number_01](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_01.png)
+
+Pico i.MX7Dual development board
+</td>
+
+<td>
+
+![Bubble_number_02](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_02.png)
+
+Standoffs (x2) and screws (x5) for the Rainbow HAT</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+![Bubble_number_03](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_03.png)
+
+Rainbow HAT</td>
+
+<td>
+
+![Bubble_number_04](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_04.png)
+
+USB-C cable</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+![Bubble_number_05](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_05.png)
+
+Wifi antenna</td>
+
+<td>
+
+![Bubble_number_06](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_06.png)
+
+Antenna extender cable</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+![Bubble_number_07](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_07.png)
+
+Camera module</td>
+
+<td>
+
+![Bubble_number_08](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_08.png)
+
+Camera module cable</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+![Bubble_number_09](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_09.png)
+
+5" multi-touch display</td>
+
+<td>
+
+![Bubble_number_10](https://developer.android.google.cn/things/images/common/bubble-numbers/Bubble_number_10.png)
+
+Display 6-wire cable</td>
+
+</tr>
+
+</tbody>
+
+</table>
 ## Connect the parts
 
 * * *
