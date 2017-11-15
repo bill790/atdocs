@@ -200,6 +200,7 @@ Wifi 天线</td>
 </table>
 ## Connect the parts
 
+## 安装各个部件
 * * *
 
 Connect the parts in the following order. Note that some versions of the Pico Pro Maker Kit do not include the Rainbow HAT, camera, and/or multi-touch display.
@@ -212,6 +213,7 @@ Connect the parts in the following order. Note that some versions of the Pico Pr
 
 Connect the wifi antenna to the development board:
 
+把 wifi 天线装到开发板上 
 <table>
 
 <tbody>
@@ -236,6 +238,29 @@ Connect the wifi antenna to the development board:
 
 </table>
 
+<table>
+
+<tbody>
+
+<tr>
+
+<td style="width:450px;">
+
+![antenna_step1](https://developer.android.google.cn/things/images/imx7d-kit/antenna_step1.jpg)
+
+<span style="font-size:1.2em; vertical-align: middle;">①</span> Locate the wifi antenna and extender cable. Screw the cable into the base of the antenna.</td>
+
+<td style="width:450px;">
+
+![antenna_step2](https://developer.android.google.cn/things/images/imx7d-kit/antenna_step2.jpg)
+
+<span style="font-size:1.2em; vertical-align: middle;">②</span> Locate the round antenna pin on the development board (pictured above). Press the small round connector at the end of the extender cable onto this pin.</td>
+
+</tr>
+
+</tbody>
+
+</table>
 ### Camera
 
 Connect the camera to the development board:
