@@ -4,9 +4,13 @@
 
 # Hardware 101
 
+# 硬件 101 
+
 
 
 ## In this document
+
+## 内容
 
 1.  [Breadboards](#breadboards)
 2.  [Power Supply](#power_supply)
@@ -22,6 +26,8 @@ You should have a basic understanding of the relationships between voltage, curr
 
 ## Breadboards
 
+## 面包板
+
 * * *
 
 [Breadboards](https://en.wikipedia.org/wiki/Breadboard) are a common tool for quickly prototyping circuits without needing to solder components together. This allows you to make wiring changes during development until the design is stable. Breadboards can also be useful in testing, by allowing you to connect instrumentation easily and probe various connections in the circuit.
@@ -31,6 +37,8 @@ You should have a basic understanding of the relationships between voltage, curr
 The holes of a breadboard are internally connected together in rows and columns to allow multiple components to share the same connection point. The outer rows are connected perpendicular to the rest of the board and form a single bus in each row across the top and bottom. These rows are typically used to connect power and ground, or other common signals needed across the entire circuit.
 
 ## Power supply
+
+##  电源
 
 * * *
 
@@ -56,17 +64,23 @@ To shut down a board, it is safe to disconnect the power supply. No special shut
 
 ## Analog and digital I/O
 
+## 模拟和数字 I/O
+
 * * *
 
 Peripherals connect to your device using various input and output pins exposed on the board. Input pins allow your app to read and interpret the current electrical state. Output pins allow your app to control the electrical state of the pins. Peripherals and onboard I/O are either analog or digital in nature.
 
 ### Analog
 
+### 模拟
+
 Analog devices produce voltage that's proportional to the physical conditions they measure. A good example is a temperature sensor, which may produce an output between 0-5V corresponding to a temperature between 0-100°C.
 
 Analog inputs translate a discrete voltage level into a proportional integer value using an [analog-to-digital converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC). The range of integers used to express the voltage level is based on the _resolution_ of the ADC, expressed in bits. A 10-bit ADC, for example, can express the input voltage as a value between 0-1023 (for example, 2<sup>10</sup> discrete steps).
 
 ### Digital
+
+### 数字
 
 Digital logic represents a voltage signal as a binary value:
 
@@ -141,6 +155,8 @@ For more information on analog and digital I/O, see [Sensors and Transducers](ht
 
 ## Pull-ups and pull-downs
 
+## 上拉 和 下拉
+
 * * *
 
 ![](https://developer.android.google.cn/things/images/hardware-inputs.png)
@@ -153,6 +169,8 @@ As an example, think of a button or switch. A switch is a pair of contacts that 
 
 ### Resistor strength
 
+### 电阻强度
+
 The resistor values you choose affect the system in different ways. Low value resistors are considered "strong" because more current flows. Strong pull-ups (or pull-downs) draw more power overall, but they can reset the signal to an idle level more quickly than a "weak" resistor with a higher value.
 
 <aside class="note">**Note:** <span>Pull-up and pull-down resistor values are typically between 1kΩ and 10kΩ.</span></aside>
@@ -162,6 +180,8 @@ As an example, the I<sup>2</sup>C serial bus uses pull-up resistors to keep the 
 See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resistor.html) for more details on applications and calculating the proper values.
 
 ## Signal debounce
+
+## 信号抗扰
 
 * * *
 
@@ -176,6 +196,8 @@ To debounce your input with hardware, add a simple RC circuit (so-named because 
 See [Input Interfacing Circuits](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) for more information on calculating debounce and other techniques for connecting input signals to your device.
 
 ## Protecting I/O pins
+
+## I/O引脚 保护
 
 * * *
 
