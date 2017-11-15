@@ -1,12 +1,18 @@
-# Pico Pro Maker Kit
+Pico Pro Maker Kit
 
-Follow these instructions to set up your [Pico Pro Maker Kit](https://www.technexion.com/solutions/iot-development-platform/android-things/).
+Pico Pro Maker 套装
 
-## What's in the box
+Follow these instructions to set up your Pico Pro Maker Kit.
 
-* * *
+按照以下指令来装好你的 Pico Pro Maker 套装.
+
+What's in the box
+
+盒子里面有什么
 
 Open the box and make sure you have all of the components in the kit. You will also need a small Phillips screwdriver (not provided).
+
+打开盒子后先确保你的部件都在里面。 你会需要一个小号螺丝刀（不随包装提供）
 
 <aside class="note">**Note:** <span>Some versions of the Pico Pro Maker Kit do not include the Rainbow HAT, camera, and/or multi-touch display. The full kit is shown below.</span></aside>
 
