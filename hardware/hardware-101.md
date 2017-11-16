@@ -16,8 +16,8 @@
 
     [面包板](#breadboards)
 2.  [Power Supply](#power_supply)
-
-    [电源](#power_supply)
+      
+     [电源](#power_supply)
 3.  [Analog and digital I/O](#analog_and_digital_io)
 
     [模拟和数字 I/O](#analog_and_digital_io)
@@ -36,6 +36,7 @@ This page provides an overview of the basic electronics concepts you should be f
 本文提供了对读者需要熟悉的基本的电子概念的概览以便读者能安全的连接外设到设备上并能开始写能有用的应用程序
 You should have a basic understanding of the relationships between voltage, current, resistance, and power before moving on, so you might find [DC Circuit Theory](http://www.electronics-tutorials.ws/dccircuits/dcp_1.html) and [Ohms Law and Power](http://www.electronics-tutorials.ws/dccircuits/dcp_2.html) helpful if you need more detail on these topics first.
 
+在进一步了解之前读者需要对电压，电流，电阻和电源之间的关系有一个基本的理解，所以读者如果需要这些主题的更多细节，可能会发现 [直流电路理论](http://www.electronics-tutorials.ws/dccircuits/dcp_1.html) 和 [欧姆定律和电源](http://www.electronics-tutorials.ws/dccircuits/dcp_2.html) 会有帮助。
 
 
 ## Breadboards
