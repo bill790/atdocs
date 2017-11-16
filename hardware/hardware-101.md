@@ -15,6 +15,7 @@
 1.  [Breadboards](#breadboards)
 
     [面包板](#breadboards)
+    
 2.  [Power Supply](#power_supply)
       
      [电源](#power_supply)
@@ -35,6 +36,7 @@
 This page provides an overview of the basic electronics concepts you should be familiar with to safely connect peripherals to devices and begin writing apps that bring them to life.
 
 本文提供了对读者需要熟悉的基本的电子概念的概览以便读者能安全的连接外设到设备上并能开始写能有用的应用程序
+
 You should have a basic understanding of the relationships between voltage, current, resistance, and power before moving on, so you might find [DC Circuit Theory](http://www.electronics-tutorials.ws/dccircuits/dcp_1.html) and [Ohms Law and Power](http://www.electronics-tutorials.ws/dccircuits/dcp_2.html) helpful if you need more detail on these topics first.
 
 
