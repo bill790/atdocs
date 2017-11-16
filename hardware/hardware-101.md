@@ -18,7 +18,7 @@
     
 2.  [Power Supply](#power_supply)
       
-     [电源](#power_supply)
+       [电源](#power_supply)
      
 3.  [Analog and digital I/O](#analog_and_digital_io)
 
@@ -51,12 +51,12 @@ You should have a basic understanding of the relationships between voltage, curr
 
 [Breadboards](https://en.wikipedia.org/wiki/Breadboard) are a common tool for quickly prototyping circuits without needing to solder components together. This allows you to make wiring changes during development until the design is stable. Breadboards can also be useful in testing, by allowing you to connect instrumentation easily and probe various connections in the circuit.
 
-[Breadboards](https://en.wikipedia.org/wiki/Breadboard) are a common tool for quickly prototyping circuits without needing to solder components together. This allows you to make wiring changes during development until the design is stable. Breadboards can also be useful in testing, by allowing you to connect instrumentation easily and probe various connections in the circuit.
+[面包板](https://en.wikipedia.org/wiki/Breadboard) 是常用的用来快速做电路原型的工具，这样可能不用把原件焊接到一起。用面包板可以让你开发当中做线路改变直到电路设计稳定下来。
 ![""](https://developer.android.google.cn/things/images/breadboard-connections.png)
 
 The holes of a breadboard are internally connected together in rows and columns to allow multiple components to share the same connection point. The outer rows are connected perpendicular to the rest of the board and form a single bus in each row across the top and bottom. These rows are typically used to connect power and ground, or other common signals needed across the entire circuit.
 
-The holes of a breadboard are internally connected together in rows and columns to allow multiple components to share the same connection point. The outer rows are connected perpendicular to the rest of the board and form a single bus in each row across the top and bottom. These rows are typically used to connect power and ground, or other common signals needed across the entire circuit.
+面包板的孔内部行列连到一起这样多个元件可以共用一个连接点。 最外边的行直连到整个板并在每一行形成一个单一的贯通总线。 这些行通常用来连接电源和地或者其他需要通过整个电路的信号。
 
 ## Power supply
 
@@ -66,10 +66,12 @@ The holes of a breadboard are internally connected together in rows and columns 
 
 Embedded devices contain active circuitry, which means they need an external power supply to function. Power is the input voltage delivered to the components on the board from an external source such as a wall adapter, battery, or USB port. The following signals are provided to the board by the power supply:
 
-Embedded devices contain active circuitry, which means they need an external power supply to function. Power is the input voltage delivered to the components on the board from an external source such as a wall adapter, battery, or USB port. The following signals are provided to the board by the power supply:
+嵌入式设备包含活跃的电路, 这意味着它们需要电源来工作。Power is the input voltage电源是从插座，电池或者USB口传过来到元件的输入电压。下面的信号由电源提供支持:
 <dl>
 
 <dt>V<sub>IN</sub></dt>
+
+<dd>Voltage of the external source connected to the board. Many boards support a range of input voltages, and use an internal _voltage regulator_ to provide stable power to the rest of the components.</dd>
 
 <dd>Voltage of the external source connected to the board. Many boards support a range of input voltages, and use an internal _voltage regulator_ to provide stable power to the rest of the components.</dd>
 
@@ -81,6 +83,7 @@ Embedded devices contain active circuitry, which means they need an external pow
 
 <dd>Reference point for 0 volts on the board. All other voltages are measured with respect to ground. Voltages measured below ground are considered negative.</dd>
 
+<dd>Reference point for 0 volts on the board. All other voltages are measured with respect to ground. Voltages measured below ground are considered negative.</dd>
 </dl>
 
 To shut down a board, it is safe to disconnect the power supply. No special shut down procedures are necessary.
