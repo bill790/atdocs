@@ -13,6 +13,8 @@
 ## 内容
 
 1.  [Breadboards](#breadboards)
+
+1.  [面包板](#breadboards)
 2.  [Power Supply](#power_supply)
 3.  [Analog and digital I/O](#analog_and_digital_io)
 4.  [Pull-ups and pull-downs](#pull-ups_and_pull-downs)
