@@ -13,18 +13,24 @@
 ## 内容
 
 1.  [Breadboards](#breadboards)
+
+    [面包板](#breadboards)
 2.  [Power Supply](#power_supply)
+
+    [电源](#power_supply)
 3.  [Analog and digital I/O](#analog_and_digital_io)
+
+    [模拟和数字 I/O](#analog_and_digital_io)
 4.  [Pull-ups and pull-downs](#pull-ups_and_pull-downs)
+
+    [上拉 和 下拉 ](#pull-ups_and_pull-downs)
 5.  [Signal debounce](#signal_debounce)
+
+    [信号抗扰](#signal_debounce)
 6.  [Protecting I/O pins](#protecting_io_pins)
 
-1.  [面包板](#breadboards)
-2.  [电源](#power_supply)
-3.  [模拟和数字 I/O](#analog_and_digital_io)
-4.  [上拉 和 下拉 ](#pull-ups_and_pull-downs)
-5.  [信号抗扰](#signal_debounce)
-6.  [保护 I/O pin脚](#protecting_io_pins)
+    [保护 I/O pin脚](#protecting_io_pins)
+
 This page provides an overview of the basic electronics concepts you should be familiar with to safely connect peripherals to devices and begin writing apps that bring them to life.
 
 本文提供了对读者需要熟悉的基本的电子概念的概览以便读者能安全的连接外设到设备上并能开始写能有用的应用程序
