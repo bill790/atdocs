@@ -264,6 +264,7 @@ In many digital interface circuits, resistors are connected between the I/O sign
 A digital input that is not actively connected to any signal is a _floating input_. Floating inputs are susceptible to [electromagnetic interference](https://en.wikipedia.org/wiki/Electromagnetic_interference), which affects the value reported to your app and causes unpredictable readings. Pull-up or pull-down resistors ensure that the line is driven to a stable value, even when nothing else is connected.
 
 没有连到任何信号的数字输入是漂浮输入。漂浮输入容易遭受 [电磁干扰](https://en.wikipedia.org/wiki/Electromagnetic_interference), 电磁干扰会影响给应用的值使得应用读取的值不可预测。即使什么也不连，上拉和下拉电阻也可以确保电路拉到一个稳定值。
+
 As an example, think of a button or switch. A switch is a pair of contacts that connects an input pin to a high or low voltage when closed, but leaves the input floating when open. In addition, many digital transducers use [open collector](https://en.wikipedia.org/wiki/Open_collector) (or open drain) outputs to report a state change. These outputs act like a simple switch and require and external source to drive the input when the switch is open.
 
 作为一个例子, 考虑一个按键或开关. 开关是一对继电器，当关的时候连接一个输入PIN脚到一个高电压或低电压上，当开的时候输入处于漂浮态。 另外, 许多 数字传感器使用[开集](https://en.wikipedia.org/wiki/Open_collector) (或开漏) 输出来报告状态改变。 这些输入就如同一个简单开关，当开关打开时需要外部资源去 驱动输入。
