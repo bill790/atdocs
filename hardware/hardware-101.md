@@ -110,7 +110,7 @@ Analog devices produce voltage that's proportional to the physical conditions th
 
 Analog inputs translate a discrete voltage level into a proportional integer value using an [analog-to-digital converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC). The range of integers used to express the voltage level is based on the _resolution_ of the ADC, expressed in bits. A 10-bit ADC, for example, can express the input voltage as a value between 0-1023 (for example, 2<sup>10</sup> discrete steps).
 
-模拟输入使用[模数转换器](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC) 把离散的电压值转换成一个成比例的整数值。用来表示电压的整数范围基于按位表示的 ADC 的分辨率。例如，一个10位 ADC可以表示在 0-1023之间的值(例如, 2<sup>10</sup> 离散).
+模拟输入使用[模数转换器](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC) 把离散的电压值转换成一个成比例的整数值。用来表示电压的整数范围基于按位表示的 ADC 的分辨率。例如，一个10位 ADC可以表示在 0-1023之间的值(例如, 2<sup>10</sup> 离散值).
 
 ### Digital
 
@@ -118,10 +118,16 @@ Analog inputs translate a discrete voltage level into a proportional integer val
 
 Digital logic represents a voltage signal as a binary value:
 
+数字逻辑用二进制值来代表一个电压信号
+
+*   **High**: When the voltage is at or near V<sub>CC</sub>. Typically represented as a logical "1".
+
 *   **High**: When the voltage is at or near V<sub>CC</sub>. Typically represented as a logical "1".
 *   **Low**: When the voltage is at or near ground. Typically represented as a logical "0".
 
 It's rare for a digital signal to be exactly 0V or V<sub>CC</sub>. Most digital logic devices interpret a range of voltages near the extremes as a valid logic level. The following table indicates common input voltage ranges for each logic state.
+
+对一个数字信号来讲是很少会正好是  0V or V<sub>CC</sub>。大多数逻辑设备把一个范围的接近的值作为有效的逻辑值。下面的表格表明每个逻辑值的通常的输入电压范围。
 
 <table>
 
@@ -171,7 +177,56 @@ It's rare for a digital signal to be exactly 0V or V<sub>CC</sub>. Most digital 
 
 </table>
 
+<table>
+
+<tbody>
+
+<tr>
+
+<th>Supply Voltage (V<sub>CC</sub>)</th>
+
+<th>Logic Low (0)</th>
+
+<th>Logic High (1)</th>
+
+</tr>
+
+<tr>
+
+<td>5V ([TTL](https://en.wikipedia.org/wiki/Transistor%E2%80%93transistor_logic))</td>
+
+<td>< 0.8V</td>
+
+<td>> 2.0V</td>
+
+</tr>
+
+<tr>
+
+<td>3.3V ([CMOS](https://en.wikipedia.org/wiki/CMOS))</td>
+
+<td>< 0.8V</td>
+
+<td>> 2.0V</td>
+
+</tr>
+
+<tr>
+
+<td>1.8V ([CMOS](https://en.wikipedia.org/wiki/CMOS))</td>
+
+<td>< 0.6V</td>
+
+<td>> 1.2V</td>
+
+</tr>
+
+</tbody>
+
+</table>
 Peripherals typically use digital I/O in a few common ways:
+
+外设通常用几种普遍方式在使用数字 I/O 
 
 *   **Stable state**: Single on/off state mapped to a stable high or low value.
 
@@ -197,15 +252,22 @@ For more information on analog and digital I/O, see [Sensors and Transducers](ht
 
 In many digital interface circuits, resistors are connected between the I/O signal pins and V<sub>CC</sub> or ground. These are known as pull-up and pull-down resistors, respectively. They guarantee that each signal has a stable default state that the rest of the system can rely on, without significantly affecting the input or output signal directly.
 
+在许多数字接口电路里，电阻连在 I/O 信号脚 和 V<sub>CC</sub> 或者地之间。 这就是所谓的上拉或下拉电阻。它们可以保证每个信号可以有个系统里其他部分可以依赖的稳定的缺省状态，同时不会明显的影响输入输出信号。
+
 A digital input that is not actively connected to any signal is a _floating input_. Floating inputs are susceptible to [electromagnetic interference](https://en.wikipedia.org/wiki/Electromagnetic_interference), which affects the value reported to your app and causes unpredictable readings. Pull-up or pull-down resistors ensure that the line is driven to a stable value, even when nothing else is connected.
 
+没有连到任何信号的数字输入是漂浮输入。漂浮输入容易遭受 [电磁干扰](https://en.wikipedia.org/wiki/Electromagnetic_interference), 电磁干扰会影响给应用的值使得应用读取的值不可预测。即使什么也不连，上拉和下拉电阻也可以确保电路拉到一个稳定值。
 As an example, think of a button or switch. A switch is a pair of contacts that connects an input pin to a high or low voltage when closed, but leaves the input floating when open. In addition, many digital transducers use [open collector](https://en.wikipedia.org/wiki/Open_collector) (or open drain) outputs to report a state change. These outputs act like a simple switch and require and external source to drive the input when the switch is open.
+
+作为一个例子, 考虑一个按键或开关. 开关是一对继电器，当关的时候连接一个输入PIN脚到一个高电压或低电压上，当开的时候输入处于漂浮态。 另外, 许多 数字传感器使用[开集](https://en.wikipedia.org/wiki/Open_collector) (或开漏) 输出来报告状态改变。 这些输入就如同一个简单开关，当开关打开时需要外部资源去 驱动输入。
 
 ### Resistor strength
 
 ### 电阻强度
 
 The resistor values you choose affect the system in different ways. Low value resistors are considered "strong" because more current flows. Strong pull-ups (or pull-downs) draw more power overall, but they can reset the signal to an idle level more quickly than a "weak" resistor with a higher value.
+
+选择的电阻值会以不同的方式影响系统。 因为有更大的电流，低阻值电阻被看作“强”。总的来说强上拉（或下拉）吸引更多电，但它们比一个“弱”高阻值的电阻能更快地复位信号到没有
 
 <aside class="note">**Note:** <span>Pull-up and pull-down resistor values are typically between 1kΩ and 10kΩ.</span></aside>
 
