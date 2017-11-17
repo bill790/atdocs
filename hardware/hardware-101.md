@@ -233,22 +233,22 @@ Peripherals typically use digital I/O in a few common ways:
 
 *   **Stable state**: Single on/off state mapped to a stable high or low value.
 
-*   **Stable state**: Single on/off state mapped to a stable high or low value.
-    ![""](https://developer.android.google.cn/things/images/digital-1.png)
+*   **稳定状态**: 单一的开/关状态 变到一个稳定的高或低。
+    ![""](https://developer.android.google.cn/things/images/digital-1.png)
 
 *   **Pulse train**: Series of digital signal pulses with variable frequency and width transmitted continuously over time.
 
-*   **Pulse train**: Series of digital signal pulses with variable frequency and width transmitted continuously over time.
-    ![""](https://developer.android.google.cn/things/images/digital-2.png)
+*   **脉冲序列**: 一串带可变频率和带宽的持续数字脉冲Series of digital signal pulses with variable frequency and width transmitted continuously over time。
+    ![""](https://developer.android.google.cn/things/images/digital-2.png)
 
 *   **Serial communication**: Series of digital 1s and 0s representing individual bits of a binary number.
 
-*   **Serial communication**: Series of digital 1s and 0s representing individual bits of a binary number.
-    ![""](https://developer.android.google.cn/things/images/digital-3.png)
+*   **串行通信**: 一系列的0和1代表二进制数的独立位。
+    ![""](https://developer.android.google.cn/things/images/digital-3.png)
 
 For more information on analog and digital I/O, see [Sensors and Transducers](http://www.electronics-tutorials.ws/io/io_1.html) and [Binary Numbers](http://www.electronics-tutorials.ws/binary/bin_1.html).
 
-For more information on analog and digital I/O, see [Sensors and Transducers](http://www.electronics-tutorials.ws/io/io_1.html) and [Binary Numbers](http://www.electronics-tutorials.ws/binary/bin_1.html).
+要获得模拟和数字 I/O 的更多信息, 可以看[各种传感器](http://www.electronics-tutorials.ws/io/io_1.html)和[二进制数](http://www.electronics-tutorials.ws/binary/bin_1.html).
 ## Pull-ups and pull-downs
 
 ## 上拉 和 下拉
@@ -278,17 +278,18 @@ The resistor values you choose affect the system in different ways. Low value re
 
 <aside class="note">**Note:** <span>Pull-up and pull-down resistor values are typically between 1kΩ and 10kΩ.</span></aside>
 
-<aside class="note">**Note:** <span>Pull-up and pull-down resistor values are typically between 1kΩ and 10kΩ.</span></aside>
-As an example, the I<sup>2</sup>C serial bus uses pull-up resistors to keep the clock and data lines stable when the bus is idle. Each device added to the bus loads down these lines, making it harder for the pull-up to keep the line at the appropriate level. As the number of devices on the bus increases, the strength of the pull-ups must also increase to handle the added load.
+<aside class="note">**Note:** <span>上拉和下拉电阻阻值一般在 1kΩ 和 10kΩ 之间</span></aside>
 
 As an example, the I<sup>2</sup>C serial bus uses pull-up resistors to keep the clock and data lines stable when the bus is idle. Each device added to the bus loads down these lines, making it harder for the pull-up to keep the line at the appropriate level. As the number of devices on the bus increases, the strength of the pull-ups must also increase to handle the added load.
 
-See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resistor.html) for more details on applications and calculating the proper values.
+作为一个例子, I<sup>2</sup>C 串行总线在总线空闲时使用上拉电阻来保持时钟和数据线稳定。 每一个加到总线的设备给这些线很重负但并使得上拉难以保持该线在合适电平。随着在总线上面的设备增加，上拉的力量必须加强以应对增加的负载。
 
 See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resistor.html) for more details on applications and calculating the proper values.
+
+看 [上拉电阻](http://www.electronics-tutorials.ws/logic/pull-up-resistor.html) 可以看到更多应用的细节并计算合适的值。
 ## Signal debounce
 
-## 信号抗扰
+## 信号去抖
 
 * * *
 
@@ -296,17 +297,17 @@ See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resist
 
 Many electrical input devices, such as switches and relays, have a mechanical component. As the mechanical motion of the device settles, the electrical signal can temporarily oscillate — or "bounce" — between multiple values. In many cases, this will be seen by your app as multiple input events in a very short time.
 
-Many electrical input devices, such as switches and relays, have a mechanical component. As the mechanical motion of the device settles, the electrical signal can temporarily oscillate — or "bounce" — between multiple values. In many cases, this will be seen by your app as multiple input events in a very short time.
+许多电子输入设备, 如开关和 继电器, 有机械元件. 随着该设备机械移动停下来, 电信号会在多个值之间临时震荡 — or "跳跃"。在很多情况中，应用会认为在很短时间里发生多个输入事件。
 To correct this problem, you must _debounce_ the signal using hardware or software. Software debounce involves setting a time delay between the initial input event and when the input is expected to stabilize (usually not more than a few hundred milliseconds).
 
-To correct this problem, you must _debounce_ the signal using hardware or software. Software debounce involves setting a time delay between the initial input event and when the input is expected to stabilize (usually not more than a few hundred milliseconds).
+为了修正这个问题, 必须用硬件或软件来_去抖_ 。 软件去抖涉及在初始的输入事件和输入稳定之间设定一个延迟时间(通常不超过几百微秒)。
 
 To debounce your input with hardware, add a simple RC circuit (so-named because it contains a resistor and capacitor) between the input pin and the device. When the input device changes state, the capacitor will charge and discharge at a rate proportional to the size of the input resistor, effectively slowing down the transitions seen by the input pin.
 
-To debounce your input with hardware, add a simple RC circuit (so-named because it contains a resistor and capacitor) between the input pin and the device. When the input device changes state, the capacitor will charge and discharge at a rate proportional to the size of the input resistor, effectively slowing down the transitions seen by the input pin.
+为了用硬件去抖, 在输入PIN脚和设备之间增加一个简单的 RC电路 (这样叫是因为它包含一个电阻和电容)。 当输入设备改变状态, 电容会以正比于输入阻抗的速率充电和放电, effectively可以有效的减缓输入PIN脚的状态改变。
 See [Input Interfacing Circuits](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) for more information on calculating debounce and other techniques for connecting input signals to your device.
 
-See [Input Interfacing Circuits](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) for more information on calculating debounce and other techniques for connecting input signals to your device.
+可以看 [输入接口电路](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) 来了解更多在计算去抖和其他连输入信号到设备上的技术的相关信息。
 
 ## Protecting I/O pins
 
