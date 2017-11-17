@@ -298,6 +298,7 @@ See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resist
 Many electrical input devices, such as switches and relays, have a mechanical component. As the mechanical motion of the device settles, the electrical signal can temporarily oscillate — or "bounce" — between multiple values. In many cases, this will be seen by your app as multiple input events in a very short time.
 
 许多电子输入设备, 如开关和 继电器, 有机械元件. 随着该设备机械移动停下来, 电信号会在多个值之间临时震荡 — or "跳跃"。在很多情况中，应用会认为在很短时间里发生多个输入事件。
+
 To correct this problem, you must _debounce_ the signal using hardware or software. Software debounce involves setting a time delay between the initial input event and when the input is expected to stabilize (usually not more than a few hundred milliseconds).
 
 为了修正这个问题, 必须用硬件或软件来_去抖_ 。 软件去抖涉及在初始的输入事件和输入稳定之间设定一个延迟时间(通常不超过几百微秒)。
@@ -305,6 +306,7 @@ To correct this problem, you must _debounce_ the signal using hardware or softwa
 To debounce your input with hardware, add a simple RC circuit (so-named because it contains a resistor and capacitor) between the input pin and the device. When the input device changes state, the capacitor will charge and discharge at a rate proportional to the size of the input resistor, effectively slowing down the transitions seen by the input pin.
 
 为了用硬件去抖, 在输入PIN脚和设备之间增加一个简单的 RC电路 (这样叫是因为它包含一个电阻和电容)。 当输入设备改变状态, 电容会以正比于输入阻抗的速率充电和放电, effectively可以有效的减缓输入PIN脚的状态改变。
+
 See [Input Interfacing Circuits](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) for more information on calculating debounce and other techniques for connecting input signals to your device.
 
 可以看 [输入接口电路](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) 来了解更多在计算去抖和其他连输入信号到设备上的技术的相关信息。
