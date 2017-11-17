@@ -84,11 +84,12 @@ Embedded devices contain active circuitry, which means they need an external pow
 
 <dd>Reference point for 0 volts on the board. All other voltages are measured with respect to ground. Voltages measured below ground are considered negative.</dd>
 
-<dd>Reference point for 0 volts on the board. All other voltages are measured with respect to ground. Voltages measured below ground are considered negative.</dd>
+<dd>板子上的0伏参考点。All other voltages are measured with respect to ground所有其他电压参考地来测量。低于地视为负电压。</dd>
 </dl>
 
 To shut down a board, it is safe to disconnect the power supply. No special shut down procedures are necessary.
 
+为了关掉板子，断开电源是安全的。不需要其他的特殊的步骤。
 ## Analog and digital I/O
 
 ## 模拟和数字 I/O
@@ -97,13 +98,19 @@ To shut down a board, it is safe to disconnect the power supply. No special shut
 
 Peripherals connect to your device using various input and output pins exposed on the board. Input pins allow your app to read and interpret the current electrical state. Output pins allow your app to control the electrical state of the pins. Peripherals and onboard I/O are either analog or digital in nature.
 
+外设使用板子上裸露的不同的输入和输出PIN脚与板子相连。 输入PIN脚允许应用读取和解释当前的状态。 输出脚允许应用来控制PIN脚状态。 外设和板上 I/O 本质上都是或者模拟或者数字的.
 ### Analog
 
 ### 模拟
 
 Analog devices produce voltage that's proportional to the physical conditions they measure. A good example is a temperature sensor, which may produce an output between 0-5V corresponding to a temperature between 0-100°C.
 
+模拟设备按照它们测量的物理条件来输出对应的电压。温度传感器是一个好例子，能按照相应的 0-100°C 产生一个在 0-5V 之间的输出电压
+
+
 Analog inputs translate a discrete voltage level into a proportional integer value using an [analog-to-digital converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC). The range of integers used to express the voltage level is based on the _resolution_ of the ADC, expressed in bits. A 10-bit ADC, for example, can express the input voltage as a value between 0-1023 (for example, 2<sup>10</sup> discrete steps).
+
+模拟输入使用[模数转换器](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC) 把离散的电压值转换成一个成比例的整数值。 The range of integers used to express the voltage level用来表示电压的整数范围基于按位表示的 ADC 的分辨率。例如，一个10位 ADC可以表示在 0-1023之间的值(例如, 2<sup>10</sup> 离散).
 
 ### Digital
 
