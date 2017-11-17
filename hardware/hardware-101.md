@@ -122,8 +122,11 @@ Digital logic represents a voltage signal as a binary value:
 
 *   **High**: When the voltage is at or near V<sub>CC</sub>. Typically represented as a logical "1".
 
-*   **High**: When the voltage is at or near V<sub>CC</sub>. Typically represented as a logical "1".
-*   **Low**: When the voltage is at or near ground. Typically represented as a logical "0".
+*   **High**: 当电压在或接近 V<sub>CC</sub>。 通常代表逻辑 "1"。
+
+*   **Low**: When the voltage is at or near ground. Typically represented as a logical "0".
+
+*   **Low**: 当电压在或接近地。 通常代表逻辑"0"。
 
 It's rare for a digital signal to be exactly 0V or V<sub>CC</sub>. Most digital logic devices interpret a range of voltages near the extremes as a valid logic level. The following table indicates common input voltage ranges for each logic state.
 
@@ -183,7 +186,7 @@ It's rare for a digital signal to be exactly 0V or V<sub>CC</sub>. Most digital 
 
 <tr>
 
-<th>Supply Voltage (V<sub>CC</sub>)</th>
+<th> 供电电压 (V<sub>CC</sub>)</th>
 
 <th>Logic Low (0)</th>
 
