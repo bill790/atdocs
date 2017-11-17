@@ -84,12 +84,12 @@ Embedded devices contain active circuitry, which means they need an external pow
 
 <dd>Reference point for 0 volts on the board. All other voltages are measured with respect to ground. Voltages measured below ground are considered negative.</dd>
 
-<dd>板子上的0伏参考点。All other voltages are measured with respect to ground所有其他电压参考地来测量。低于地视为负电压。</dd>
+<dd>板子上的0伏参考点。所有其他电压参考地来测量。低于地的电压视为负电压。</dd>
 </dl>
 
 To shut down a board, it is safe to disconnect the power supply. No special shut down procedures are necessary.
 
-为了关掉板子，断开电源是安全的。不需要其他的特殊的步骤。
+为了安全地关掉板子，断开电源就可以。不需要其他的特殊的步骤。
 ## Analog and digital I/O
 
 ## 模拟和数字 I/O
@@ -110,7 +110,7 @@ Analog devices produce voltage that's proportional to the physical conditions th
 
 Analog inputs translate a discrete voltage level into a proportional integer value using an [analog-to-digital converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC). The range of integers used to express the voltage level is based on the _resolution_ of the ADC, expressed in bits. A 10-bit ADC, for example, can express the input voltage as a value between 0-1023 (for example, 2<sup>10</sup> discrete steps).
 
-模拟输入使用[模数转换器](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC) 把离散的电压值转换成一个成比例的整数值。 The range of integers used to express the voltage level用来表示电压的整数范围基于按位表示的 ADC 的分辨率。例如，一个10位 ADC可以表示在 0-1023之间的值(例如, 2<sup>10</sup> 离散).
+模拟输入使用[模数转换器](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADC) 把离散的电压值转换成一个成比例的整数值。用来表示电压的整数范围基于按位表示的 ADC 的分辨率。例如，一个10位 ADC可以表示在 0-1023之间的值(例如, 2<sup>10</sup> 离散).
 
 ### Digital
 
