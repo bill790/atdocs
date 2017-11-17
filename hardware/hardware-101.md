@@ -73,12 +73,13 @@ Embedded devices contain active circuitry, which means they need an external pow
 
 <dd>Voltage of the external source connected to the board. Many boards support a range of input voltages, and use an internal _voltage regulator_ to provide stable power to the rest of the components.</dd>
 
-<dd>Voltage of the external source connected to the board. Many boards support a range of input voltages, and use an internal _voltage regulator_ to provide stable power to the rest of the components.</dd>
+<dd>连到板子的外部电压。很多板子支持一个范围内的输入电压, 并使用一个内部的 _稳压源_ 给其他的元件提供稳定的电压。</dd>
 
 <dt>V<sub>CC</sub> or V<sub>DD</sub></dt>
 
 <dd>Internal regulated voltage powering the components on the board. Common power supply voltages are +5V, +3.3V, and +1.8V.</dd>
 
+<dd>内部稳压给板子上的元件供电。 通常的供电电压有 +5V, +3.3V, and +1.8V.</dd>
 <dt>Ground (GND)</dt>
 
 <dd>Reference point for 0 volts on the board. All other voltages are measured with respect to ground. Voltages measured below ground are considered negative.</dd>
