@@ -66,7 +66,7 @@ The holes of a breadboard are internally connected together in rows and columns 
 
 Embedded devices contain active circuitry, which means they need an external power supply to function. Power is the input voltage delivered to the components on the board from an external source such as a wall adapter, battery, or USB port. The following signals are provided to the board by the power supply:
 
-嵌入式设备包含活跃的电路, 这意味着它们需要电源来工作。Power is the input voltage电源是从插座，电池或者USB口传过来到元件的输入电压。下面的信号由电源提供支持:
+嵌入式设备包含活跃的电路, 这意味着它们需要电源来工作。电是从外部源如插座，电池或者USB口传过来到板上元件的输入电压。下面的信号由电源提供支持:
 <dl>
 
 <dt>V<sub>IN</sub></dt>
@@ -233,18 +233,22 @@ Peripherals typically use digital I/O in a few common ways:
 
 *   **Stable state**: Single on/off state mapped to a stable high or low value.
 
+*   **Stable state**: Single on/off state mapped to a stable high or low value.
     ![""](https://developer.android.google.cn/things/images/digital-1.png)
 
 *   **Pulse train**: Series of digital signal pulses with variable frequency and width transmitted continuously over time.
 
+*   **Pulse train**: Series of digital signal pulses with variable frequency and width transmitted continuously over time.
     ![""](https://developer.android.google.cn/things/images/digital-2.png)
 
 *   **Serial communication**: Series of digital 1s and 0s representing individual bits of a binary number.
 
+*   **Serial communication**: Series of digital 1s and 0s representing individual bits of a binary number.
     ![""](https://developer.android.google.cn/things/images/digital-3.png)
 
 For more information on analog and digital I/O, see [Sensors and Transducers](http://www.electronics-tutorials.ws/io/io_1.html) and [Binary Numbers](http://www.electronics-tutorials.ws/binary/bin_1.html).
 
+For more information on analog and digital I/O, see [Sensors and Transducers](http://www.electronics-tutorials.ws/io/io_1.html) and [Binary Numbers](http://www.electronics-tutorials.ws/binary/bin_1.html).
 ## Pull-ups and pull-downs
 
 ## 上拉 和 下拉
@@ -274,10 +278,14 @@ The resistor values you choose affect the system in different ways. Low value re
 
 <aside class="note">**Note:** <span>Pull-up and pull-down resistor values are typically between 1kΩ and 10kΩ.</span></aside>
 
+<aside class="note">**Note:** <span>Pull-up and pull-down resistor values are typically between 1kΩ and 10kΩ.</span></aside>
+As an example, the I<sup>2</sup>C serial bus uses pull-up resistors to keep the clock and data lines stable when the bus is idle. Each device added to the bus loads down these lines, making it harder for the pull-up to keep the line at the appropriate level. As the number of devices on the bus increases, the strength of the pull-ups must also increase to handle the added load.
+
 As an example, the I<sup>2</sup>C serial bus uses pull-up resistors to keep the clock and data lines stable when the bus is idle. Each device added to the bus loads down these lines, making it harder for the pull-up to keep the line at the appropriate level. As the number of devices on the bus increases, the strength of the pull-ups must also increase to handle the added load.
 
 See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resistor.html) for more details on applications and calculating the proper values.
 
+See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resistor.html) for more details on applications and calculating the proper values.
 ## Signal debounce
 
 ## 信号抗扰
@@ -288,9 +296,15 @@ See [Pull-up Resistors](http://www.electronics-tutorials.ws/logic/pull-up-resist
 
 Many electrical input devices, such as switches and relays, have a mechanical component. As the mechanical motion of the device settles, the electrical signal can temporarily oscillate — or "bounce" — between multiple values. In many cases, this will be seen by your app as multiple input events in a very short time.
 
+Many electrical input devices, such as switches and relays, have a mechanical component. As the mechanical motion of the device settles, the electrical signal can temporarily oscillate — or "bounce" — between multiple values. In many cases, this will be seen by your app as multiple input events in a very short time.
+To correct this problem, you must _debounce_ the signal using hardware or software. Software debounce involves setting a time delay between the initial input event and when the input is expected to stabilize (usually not more than a few hundred milliseconds).
+
 To correct this problem, you must _debounce_ the signal using hardware or software. Software debounce involves setting a time delay between the initial input event and when the input is expected to stabilize (usually not more than a few hundred milliseconds).
 
 To debounce your input with hardware, add a simple RC circuit (so-named because it contains a resistor and capacitor) between the input pin and the device. When the input device changes state, the capacitor will charge and discharge at a rate proportional to the size of the input resistor, effectively slowing down the transitions seen by the input pin.
+
+To debounce your input with hardware, add a simple RC circuit (so-named because it contains a resistor and capacitor) between the input pin and the device. When the input device changes state, the capacitor will charge and discharge at a rate proportional to the size of the input resistor, effectively slowing down the transitions seen by the input pin.
+See [Input Interfacing Circuits](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) for more information on calculating debounce and other techniques for connecting input signals to your device.
 
 See [Input Interfacing Circuits](http://www.electronics-tutorials.ws/io/input-interfacing-circuits.html) for more information on calculating debounce and other techniques for connecting input signals to your device.
 
@@ -304,13 +318,21 @@ See [Input Interfacing Circuits](http://www.electronics-tutorials.ws/io/input-in
 
 Each output pin has a limited capability to source (when high) or sink (when low) current from the circuitry connected to it. Peripherals that draw more current than the pin can handle — even temporarily — can damage the output. To protect the pin, insert a current-limiting resistor in series with the load.
 
+Each output pin has a limited capability to source (when high) or sink (when low) current from the circuitry connected to it. Peripherals that draw more current than the pin can handle — even temporarily — can damage the output. To protect the pin, insert a current-limiting resistor in series with the load.
 <aside class="note">**Note:** <span>Series resistor values are typically between 100Ω and 300Ω.</span></aside>
+
+<aside class="note">**Note:** <span>Series resistor values are typically between 100Ω and 300Ω.</span></aside>
+To control higher power transducers, such as motors, buffer the load from the output pin using a transistor or similar electronically controlled switch and power the transducer directly from the power supply.
 
 To control higher power transducers, such as motors, buffer the load from the output pin using a transistor or similar electronically controlled switch and power the transducer directly from the power supply.
 
 <aside class="note">**Note:** <span>The source/sink capacity of I/O pins will vary by device. Check your hardware documentation to better understand what your board can support.</span></aside>
 
+<aside class="note">**Note:** <span>The source/sink capacity of I/O pins will vary by device. Check your hardware documentation to better understand what your board can support.</span></aside>
 All I/O pins are designed to safely operate with in the voltage range between 0V and V<sub>CC</sub>. Connecting any pin to a voltage higher than the power supply for that component will likely damage it. Always verify that the voltage levels generated by your sensors and transducers match their connected I/O pins. To connect devices of variable supplies together, use a [logic level converter](https://www.sparkfun.com/products/12009) circuit.
+
+All I/O pins are designed to safely operate with in the voltage range between 0V and V<sub>CC</sub>. Connecting any pin to a voltage higher than the power supply for that component will likely damage it. Always verify that the voltage levels generated by your sensors and transducers match their connected I/O pins. To connect devices of variable supplies together, use a [logic level converter](https://www.sparkfun.com/products/12009) circuit.
+See [Output Interfacing Circuits](http://www.electronics-tutorials.ws/io/output-interfacing-circuits.html) for more examples of circuits you can use to safely interface with digital and analog I/O.
 
 See [Output Interfacing Circuits](http://www.electronics-tutorials.ws/io/output-interfacing-circuits.html) for more examples of circuits you can use to safely interface with digital and analog I/O.
 
