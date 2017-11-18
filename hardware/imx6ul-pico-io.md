@@ -8,10 +8,12 @@
 
 1.  [Pico I/O](#pico-imx6-io)
 
-    [Pico I/O 脚定义](#pico-imx6-io)
+    [Pico I/O 脚定义](#pico-imx6-io)
+    
 2.  [Wandboard I/O](#wandboard-imx6-io)
 
     [Wandboard I/O 脚定义](#wandboard-imx6-io)
+    
 </div>
 
 </div>
