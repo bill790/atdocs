@@ -2,6 +2,8 @@
 
 ## In this document
 
+## 内容
+
 1.  [Pico I/O](#pico-imx6-io)
 2.  [Wandboard I/O](#wandboard-imx6-io)
 
@@ -11,6 +13,7 @@
 
 This section describes the [Peripheral I/O](https://developer.android.google.cn/things/sdk/pio/index.html) interfaces available to your apps running on the [NXP Pico i.MX6UL](http://www.technexion.com/solutions/iot-development-platform/android-things/) developer kit.
 
+ [外设 I/O](https://developer.android.google.cn/things/sdk/pio/index.html) interfaces available to your apps running on the [NXP Pico i.MX6UL](http://www.technexion.com/solutions/iot-development-platform/android-things/) developer kit.
 ![](https://developer.android.google.cn/things/images/nxp-pico7-board.png)
 
 The following pinout diagram illustrates the locations of the available ports exposed by the breakout connectors of this board:
