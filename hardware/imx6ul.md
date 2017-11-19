@@ -118,8 +118,11 @@ Use the following steps to flash the Android image:
         $ fastboot devices1b2f21d4e1fe0129        fastboot
 
     <aside class="note">**Note:** <span>Your device will not boot into Fastboot mode if it was previously flashed with Android Things. You need to first execute the following command using the [adb tool](https://developer.android.google.cn/tools/help/adb.html) to reboot the device into Fastboot mode.
-
-<aside class="note">**Note:** <span>如何前面已经烧了Android Things 映像，板子会进入不了 fastboot 模式。 这样就需要用[adb tool](https://developer.android.google.cn/tools/help/adb.html)执行下面命令使得板子进入 fastboot 模式。
+    
+    <aside class="note">**Note:** <span>如何前面已经烧了Android Things 映像，板子会进入不了 fastboot 模式。 这样就需要用[adb tool](https://developer.android.google.cn/tools/help/adb.html)执行下面命令使得板子进入 fastboot 模式。
+ 
+ 
+ 
 
         $ adb reboot bootloader</span></aside>
 
@@ -247,55 +250,6 @@ Once you can access a shell prompt, follow these steps:
 
     </table>
 
-
-
-     <table>
-
-    <tbody>
-
-    <tr>
-
-    <th style="width: 240px;">Argument</th>
-
-    <th>Description</th>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e ssid <var>network_ssid</var>`</td>
-
-    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e passphrase <var>network_pass</var>`</td>
-
-    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e passphrase64 <var>encoded_pass</var>`</td>
-
-    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`--ez hidden true`</td>
-
-    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.</td>
-
-    </tr>
-
-    </tbody>
-
-    </table>
 
 2.  Verify that the connection was successful through `logcat`:
 
