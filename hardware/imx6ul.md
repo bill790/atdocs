@@ -98,7 +98,6 @@ Use the following steps to flash the Android image:
     
     *   找到你电脑上的 Android SDK 的位置; 路径可以在Android Studio的设置里面找到。确认 `fastboot` 在 `platform-tools/` 目录里。
 
-    
     *   After you have the fastboot tool, add it to your `PATH` [environment variable](https://developer.android.google.cn/studio/command-line/variables.html#set). This command should be similar to the following:
 
     *   如果已经装了fastboot, 加到 `PATH` [环境变量](https://developer.android.google.cn/studio/command-line/variables.html#set)里面。命令如同如下:
@@ -171,6 +170,56 @@ Once you can access a shell prompt, follow these steps:
     The following arguments are supported with this command:
 
     <table>
+
+    <tbody>
+
+    <tr>
+
+    <th style="width: 240px;">Argument</th>
+
+    <th>Description</th>
+
+    </tr>
+
+    <tr>
+
+    <td>`-e ssid <var>network_ssid</var>`</td>
+
+    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.</td>
+
+    </tr>
+
+    <tr>
+
+    <td>`-e passphrase <var>network_pass</var>`</td>
+
+    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.</td>
+
+    </tr>
+
+    <tr>
+
+    <td>`-e passphrase64 <var>encoded_pass</var>`</td>
+
+    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.</td>
+
+    </tr>
+
+    <tr>
+
+    <td>`--ez hidden true`</td>
+
+    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.</td>
+
+    </tr>
+
+    </tbody>
+
+    </table>
+
+
+
+     <table>
 
     <tbody>
 
