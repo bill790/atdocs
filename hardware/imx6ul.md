@@ -34,6 +34,7 @@ Connect the board to your host computer:
 
 连接板子到主机:
 
+
 **For Pico i.MX6UL:**
 
 **对于Pico i.MX6UL板:**
@@ -217,20 +218,27 @@ Once you can access a shell prompt, follow these steps:
 
 2.  Verify that the connection was successful through `logcat`:
 
+    用 `logcat` 来验证连接成功:
+
         $ logcat -d | grep Wifi...V WifiWatcher: Network state changed to CONNECTEDV WifiWatcher: SSID changed: ...I WifiConfigurator: Successfully connected to ...
 
 3.  Test that you can access a remote IP address:
+
+    可以用访问一个远程 IP 地址来测试：
 
         $ ping 8.8.8.8PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=6.67 ms64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=55.5 ms64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=23.0 ms64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=245 ms
 
 4.  Check that the date and time are set correctly on the device:
 
      用如下命令来检查时间和日期在板子上设置
+     
         $ date
 
     <aside class="note">**Note:** <span>An incorrect date or time may cause SSL errors. Restart the device to automatically set the correct date and time from a time server.</span></aside>
 
 If you want to clear all of the saved networks on the board:
+
+如果你想清除所有板子上保存下来的网络:
 
     $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Reset
 
