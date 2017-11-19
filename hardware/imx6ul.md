@@ -13,7 +13,7 @@ Expanding the i.MX 6 series, the i.MX 6UltraLite is a high performance, ultra-ef
 
 Before you begin flashing, you will need the following items in addition to your board:
 
-烧录前除了板子还需要这些东西:
+烧录前除了板子还需要下面几项:
 
 *   USB-C or Micro-USB cable
 
@@ -25,7 +25,7 @@ Before you begin flashing, you will need the following items in addition to your
 
 To flash Android Things onto your board, download the latest preview image in the [Android Things Console](https://partner.android.com/things/console) (see the [release notes](https://developer.android.google.cn/things/preview/releases.html)) and follow these steps:
 
-为了烧录 Android Things 到板子上, 从 [Android Things Console](https://partner.android.com/things/console) 下载最新的映像(看 [release notes](https://developer.android.google.cn/things/preview/releases.html)) 并按一下步骤来做:
+为了烧录 Android Things 到板子上, 从 [Android Things Console](https://partner.android.com/things/console) 下载最新的映像(看下 [release notes](https://developer.android.google.cn/things/preview/releases.html)) 并按一下步骤来做:
 ### Step 1: Connect the Hardware
 
 ### Step 1: 连上硬件
@@ -51,7 +51,13 @@ Connect the board to your host computer:
 ![""](https://developer.android.google.cn/things/images/spriot-connections.png)
 
 1.  Connect a Micro-USB cable to the USB OTG connector.
+
+    把板子上的USB OTG接口和主机之间用 USB-C线连起来。
+
 2.  Connect a 5V power adapter to the power input connector.
+
+    连一个5V 电源适配器到电源输入接口
+
 
 **For Argon i.MX6UL:**
 
@@ -66,10 +72,20 @@ Connect the board to your host computer:
 
 ### Step 2: Flash Android Things
 
+### 第二步： 烧录 Anroid Things 
+
+
 Use the following steps to flash the Android image:
+
+使用下面步骤来烧录 Android 映像：
+
 
 1.  Download and install [Android Studio](https://developer.android.google.cn/studio/index.html) or the [`sdkmanager`](https://developer.android.google.cn/studio/command-line/sdkmanager.html) command-line tool. Update the Android SDK Platform Tools to version 25.0.3 or later from the [SDK Manager](https://developer.android.google.cn/studio/intro/update.html#sdk-manager).
 
+   下载并安装 [Android Studio](https://developer.android.google.cn/studio/index.html) 或者安装 [`sdkmanager`](https://developer.android.google.cn/studio/command-line/sdkmanager.html) 命令行工具。从 [SDK Manager](https://developer.android.google.cn/studio/intro/update.html#sdk-manager)更新 Android SDK Platform Tools 到 25.0.3 版或者更新版本。
+
+    *   Navigate to the Android SDK location on your computer; the path can be found in the system settings for Android Studio. Verify that the `fastboot` binary is installed in the `platform-tools/` directory.
+    
     *   Navigate to the Android SDK location on your computer; the path can be found in the system settings for Android Studio. Verify that the `fastboot` binary is installed in the `platform-tools/` directory.
 
     *   After you have the fastboot tool, add it to your `PATH` [environment variable](https://developer.android.google.cn/studio/command-line/variables.html#set). This command should be similar to the following:
@@ -199,7 +215,8 @@ Once you can access a shell prompt, follow these steps:
 
 4.  Check that the date and time are set correctly on the device:
 
-        $ date
+     用如下命令来检查时间和日期在板子上设置
+        $ date
 
     <aside class="note">**Note:** <span>An incorrect date or time may cause SSL errors. Restart the device to automatically set the correct date and time from a time server.</span></aside>
 
