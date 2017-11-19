@@ -131,8 +131,7 @@ Use the following steps to flash the Android image:
    执行 `flash-all.sh` 脚本。 此脚本会安装 bootloader, 基带固件, 和操作系统 (On Windows systems, use `flash-all.bat` instead).
 
     <aside class="note">**Note:** <span>The device automatically reboots into Android Things when the process is complete.</span></aside>
-
-     <aside class="note">**Note:** <span>当处理程序结束会自动启动到 Android Things 。</span></aside>
+    <aside class="note">**Note:** <span>当处理程序结束会自动启动到 Android Things 。</span></aside>
      
 5.  To verify that Android is running on the device, discover it using the [adb tool](https://developer.android.google.cn/tools/help/adb.html):
 
@@ -249,7 +248,6 @@ Once you can access a shell prompt, follow these steps:
     </tbody>
 
     </table>
-
 
 2.  Verify that the connection was successful through `logcat`:
 
