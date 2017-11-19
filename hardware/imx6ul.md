@@ -54,7 +54,13 @@ Connect the board to your host computer:
 ![""](https://developer.android.google.cn/things/images/spriot-connections.png)
 
 1.  Connect a Micro-USB cable to the USB OTG connector.
+
+    把板子上的USB OTG接口和主机之间用 USB-C线连起来。
+
 2.  Connect a 5V power adapter to the power input connector.
+
+    连一个5V 电源适配器到电源输入接口
+
 
 **For Argon i.MX6UL:**
 
@@ -63,19 +69,42 @@ Connect the board to your host computer:
 ![""](https://developer.android.google.cn/things/images/vvdn-connections.png)
 
 1.  Ensure switch **SW1** is in the **OFF** position.
+
+    确保开关 **SW1** 保持在 **关** 。
+    
 2.  Connect a Micro-USB cable to the **OTG** (**J7**) connector.
+
+    用Micro-USB 线连到 **OTG** (**J7**) 接口。
+    
 3.  Connect a 5V power adapter to the power input (**J2**) connector.
+    
+    用5V电源适配器连电源输入接口(**J2**)。
+    
 4.  Move **SW1** to the **ON** position to power the board.
+
+    把 **SW1** 切换到**开** 给板子上电。
 
 ### Step 2: Flash Android Things
 
+### 第二步： 烧录 Anroid Things 
+
+
 Use the following steps to flash the Android image:
+
+使用下面步骤来烧录 Android 映像：
+
 
 1.  Download and install [Android Studio](https://developer.android.google.cn/studio/index.html) or the [`sdkmanager`](https://developer.android.google.cn/studio/command-line/sdkmanager.html) command-line tool. Update the Android SDK Platform Tools to version 25.0.3 or later from the [SDK Manager](https://developer.android.google.cn/studio/intro/update.html#sdk-manager).
 
+   下载并安装 [Android Studio](https://developer.android.google.cn/studio/index.html) 或者安装 [`sdkmanager`](https://developer.android.google.cn/studio/command-line/sdkmanager.html) 命令行工具。从 [SDK Manager](https://developer.android.google.cn/studio/intro/update.html#sdk-manager)更新 Android SDK Platform Tools 到 25.0.3 版或者更新版本。
+
     *   Navigate to the Android SDK location on your computer; the path can be found in the system settings for Android Studio. Verify that the `fastboot` binary is installed in the `platform-tools/` directory.
+    
+    *   找到你电脑上的 Android SDK 的位置; 路径可以在Android Studio的设置里面找到。确认 `fastboot` 在 `platform-tools/` 目录里。
 
     *   After you have the fastboot tool, add it to your `PATH` [environment variable](https://developer.android.google.cn/studio/command-line/variables.html#set). This command should be similar to the following:
+
+    *   如果已经装了fastboot, 加到 `PATH` [环境变量](https://developer.android.google.cn/studio/command-line/variables.html#set)里面。命令如同如下:
 
         `export PATH=$PATH:"path/to/fastboot"`
 
@@ -90,8 +119,11 @@ Use the following steps to flash the Android image:
         $ fastboot devices1b2f21d4e1fe0129        fastboot
 
     <aside class="note">**Note:** <span>Your device will not boot into Fastboot mode if it was previously flashed with Android Things. You need to first execute the following command using the [adb tool](https://developer.android.google.cn/tools/help/adb.html) to reboot the device into Fastboot mode.
-
-<aside class="note">**Note:** <span>如何前面已经烧了Android Things 映像，板子会进入不了 fastboot 模式。 这样就需要用[adb tool](https://developer.android.google.cn/tools/help/adb.html)执行下面命令使得板子进入 fastboot 模式。
+    
+    <aside class="note">**Note:** <span>如何前面已经烧了Android Things 映像，板子会进入不了 fastboot 模式。 这样就需要用[adb tool](https://developer.android.google.cn/tools/help/adb.html)执行下面命令使得板子进入 fastboot 模式。
+ 
+ 
+ 
 
         $ adb reboot bootloader</span></aside>
 
