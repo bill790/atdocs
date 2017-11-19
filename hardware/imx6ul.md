@@ -141,65 +141,7 @@ Use the following steps to flash the Android image:
 
 ## Connecting Wi-Fi
 
-* * *
-
-After flashing your board, it is strongly recommended to connect it to the internet. This allows your device to deliver crash reports and receive updates.
-
-在板子烧过后, 强烈建议要连上网。 这会让你的板子能上传崩溃报告并接受更新。
-
-<aside class="note">**Note:** <span>The device doesn't need to be on the same network as your computer.</span></aside>
-
-<aside class="note">**Note:** <span>板子不需要和你的主机在一个网络上</span></aside>
-
-Before connecting your board to a Wi-Fi network, attach an external IPEX or u.FL Wi-Fi antenna to your board as shown:
-
-在连到Wi-Fi之前, 连一根 IPEX 或者 u.FL Wi-Fi 天线到板子上如下所示:
-
-**For Pico i.MX6UL:**
-
-**对于 Pico i.MX6UL板:**
-
-![""](https://developer.android.google.cn/things/images/pico7-antenna.png)
-
-**For SprIoT i.MX6UL:**
-
-**对于 SprIoT i.MX6UL板:**
-
-![""](https://developer.android.google.cn/things/images/spriot-antenna.png)
-
-**对于 Argon i.MX6UL板:**
-
-![""](https://developer.android.google.cn/things/images/vvdn-antenna.png)
-
-<aside class="note">**Note:** <span>The module can't resolve Wi-Fi signals if you proceed without connecting an antenna.</span></aside>
-
-<aside class="note">**Note:** <span>如果不连接天线模块无法处理 Wi-Fi信号。</span></aside>
-
-To connect your board to Wi-Fi, first access a shell prompt on the device. You can use either of the following methods:
-
-为了连板子到 Wi-Fi, 先连上板子的 shell 终端。 可以使用下面任一种方法：
-
-*   Open a shell over adb with the `adb shell` command.
-
-*   用 adb 命令 `adb shell` 打开一个 shell 终端。
-
-*   Connect to the [serial console](#serial_debug_console).
-
-*   连 [串口](#serial_debug_console)。
-
-Once you can access a shell prompt, follow these steps:
-
-一旦连到一个 shell 终端, 按下面步骤来:
-
-1.  Send an intent to the Wi-Fi service that includes the SSID of your local network. Your [board](https://developer.android.google.cn/things/hardware/developer-kits.html) must support the network protocol and frequency band of the wireless network in order to establish a connection.
-
-   用下面命令给 Wi-Fi 服务发一个包含本地网络的SSID的描述。  [板子](https://developer.android.google.cn/things/hardware/developer-kits.html) 必须能支持无线网络协议和频段以建立连接。
-
-        $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Connect
-
-    The following arguments are supported with this command:
-
-    这个命令由下面参数支持:
+## 连 Wi-Fi
 
     <table>
 
