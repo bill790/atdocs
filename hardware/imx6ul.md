@@ -45,6 +45,7 @@ Connect the board to your host computer:
 
     把板子上的USB OTG接口和主机之间用 USB-C线连起来。
     
+
 **For SprIoT i.MX6UL:**
 
 **对于 SprIoT i.MX6UL板:**
