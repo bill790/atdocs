@@ -2,7 +2,7 @@
 
 Expanding the i.MX 6 series, the i.MX 6UltraLite is a high performance, ultra-efficient processor family featuring an advanced implementation of a single ARM® Cortex®-A7 core. The Pico variant is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
 
-Expanding the i.MX 6 series, the i.MX 6UltraLite is a high performance, ultra-efficient processor family featuring an advanced implementation of a single ARM® Cortex®-A7 core. The Pico variant is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
+从 i.MX 6 系列中扩展而来, i.MX 6UltraLite 是一个高性能，非常高效的处理器家族，采用的是单个ARM® Cortex®-A7核。 Pico 版本的是跟Intel® Edison管脚简兼容 is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
 ![](https://developer.android.google.cn/things/images/nxp-pico7-board.png) ![](https://developer.android.google.cn/things/images/nxp-spriot-board.png) ![](https://developer.android.google.cn/things/images/nxp-argon-board.png)
 
 ## Flashing the image
@@ -13,24 +13,40 @@ Expanding the i.MX 6 series, the i.MX 6UltraLite is a high performance, ultra-ef
 
 Before you begin flashing, you will need the following items in addition to your board:
 
-Before you begin flashing, you will need the following items in addition to your board:
+烧录前除了板子还需要这些东西:
 
 *   USB-C or Micro-USB cable
-*   5V DC power adapter (not needed for the Pico i.MX6UL board)
+
+*   USB-C or Micro-USB 线
+
+*   5V DC power adapter (not needed for the Pico i.MX6UL board)
+
+*   5V 直流适配器 ( Pico i.MX6UL 板子不需要)
 
 To flash Android Things onto your board, download the latest preview image in the [Android Things Console](https://partner.android.com/things/console) (see the [release notes](https://developer.android.google.cn/things/preview/releases.html)) and follow these steps:
 
+为了烧录 Android Things 到板子上, 从 [Android Things Console](https://partner.android.com/things/console) 下载最新的映像(看 [release notes](https://developer.android.google.cn/things/preview/releases.html)) 并按一下步骤来做:
 ### Step 1: Connect the Hardware
+
+### Step 1: 连上硬件
 
 Connect the board to your host computer:
 
+连接板子到主机:
+
 **For Pico i.MX6UL:**
+
+**对于Pico i.MX6UL板:**
 
 ![""](https://developer.android.google.cn/things/images/pico7-connections.png)
 
 1.  Connect a USB-C cable from your host computer to the USB OTG connector.
 
+    把板子上的USB OTG接口和主机之间用 USB-C线连起来。
+    
 **For SprIoT i.MX6UL:**
+
+**对于 SprIoT i.MX6UL板:**
 
 ![""](https://developer.android.google.cn/things/images/spriot-connections.png)
 
@@ -38,6 +54,8 @@ Connect the board to your host computer:
 2.  Connect a 5V power adapter to the power input connector.
 
 **For Argon i.MX6UL:**
+
+**对于Argon i.MX6UL板:**
 
 ![""](https://developer.android.google.cn/things/images/vvdn-connections.png)
 
@@ -60,19 +78,29 @@ Use the following steps to flash the Android image:
 
 2.  Open a command line terminal and navigate to the unzipped image directory.
 
+    打开一个命令行终端并进到解开映像的目录。
+
 3.  Verify that the device has booted into Fastboot mode by executing the following command:
+
+     执行下面命令确保板子进入了fastboot 模式:
 
         $ fastboot devices1b2f21d4e1fe0129        fastboot
 
     <aside class="note">**Note:** <span>Your device will not boot into Fastboot mode if it was previously flashed with Android Things. You need to first execute the following command using the [adb tool](https://developer.android.google.cn/tools/help/adb.html) to reboot the device into Fastboot mode.
 
+<aside class="note">**Note:** <span>如何前面已经烧了Android Things 映像，板子会进入不了 fastboot 模式。 这样就需要用[adb tool](https://developer.android.google.cn/tools/help/adb.html)执行下面命令使得板子进入 fastboot 模式。
+
         $ adb reboot bootloader</span></aside>
 
 4.  Execute the `flash-all.sh` script. This script installs the necessary bootloader, baseband firmware(s), and operating system. (On Windows systems, use `flash-all.bat` instead).
 
+   执行 `flash-all.sh` 脚本。 此脚本会安装 bootloader, 基带固件, 和操作系统 (On Windows systems, use `flash-all.bat` instead).
+
     <aside class="note">**Note:** <span>The device automatically reboots into Android Things when the process is complete.</span></aside>
 
 5.  To verify that Android is running on the device, discover it using the [adb tool](https://developer.android.google.cn/tools/help/adb.html):
+
+   为了验证 Android 正在板子上跑，可以用 [adb tool](https://developer.android.google.cn/tools/help/adb.html)执行如下命令:
 
         $ adb wait-for-device...$ adb devicesList of devices attached1b2f21d4e1fe0129        device
 
