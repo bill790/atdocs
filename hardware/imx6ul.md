@@ -139,9 +139,9 @@ Use the following steps to flash the Android image:
 
         $ adb wait-for-device...$ adb devicesList of devices attached1b2f21d4e1fe0129        device
 
-## Connecting Wi-Fi
 
-## 连 Wi-Fi
+
+
 
     <table>
 
