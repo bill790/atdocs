@@ -2,7 +2,7 @@
 
 Expanding the i.MX 6 series, the i.MX 6UltraLite is a high performance, ultra-efficient processor family featuring an advanced implementation of a single ARM® Cortex®-A7 core. The Pico variant is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
 
-从 i.MX 6 系列中扩展而来, i.MX 6UltraLite 是一个高性能，非常高效的处理器家族，采用的是单个ARM® Cortex®-A7核。 Pico 版本的是跟Intel® Edison管脚简兼容 is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
+从 i.MX 6 系列中扩展而来, i.MX 6UltraLite 是一个高性能，非常高效的处理器家族，采用的是单个ARM® Cortex®-A7核。 Pico 版本的是跟 Intel® Edison 管脚兼容的为传感器和低速 I/O 设计的, 但同时具备多媒体和联网的功能扩展可能性,是能够很容易用于 IoT 设计的前沿技术。
 ![](https://developer.android.google.cn/things/images/nxp-pico7-board.png) ![](https://developer.android.google.cn/things/images/nxp-spriot-board.png) ![](https://developer.android.google.cn/things/images/nxp-argon-board.png)
 
 ## Flashing the image
@@ -66,9 +66,17 @@ Connect the board to your host computer:
 ![""](https://developer.android.google.cn/things/images/vvdn-connections.png)
 
 1.  Ensure switch **SW1** is in the **OFF** position.
+
+    确保开关 **SW1** 保持在 **关** 。
 2.  Connect a Micro-USB cable to the **OTG** (**J7**) connector.
+
+    用Micro-USB 线连到 **OTG** (**J7**) 接口。
 3.  Connect a 5V power adapter to the power input (**J2**) connector.
+    
+    用5V电源适配器连电源输入接口(**J2**)。
 4.  Move **SW1** to the **ON** position to power the board.
+
+    把 **SW1** 切换到**开** 给板子上电。
 
 ### Step 2: Flash Android Things
 
@@ -86,9 +94,11 @@ Use the following steps to flash the Android image:
 
     *   Navigate to the Android SDK location on your computer; the path can be found in the system settings for Android Studio. Verify that the `fastboot` binary is installed in the `platform-tools/` directory.
     
-    *   Navigate to the Android SDK location on your computer; the path can be found in the system settings for Android Studio. Verify that the `fastboot` binary is installed in the `platform-tools/` directory.
+    *   找到你电脑上的 Android SDK 的位置; 路径可以在Android Studio的设置里面找到。确认 `fastboot` 在 `platform-tools/` 目录里。
 
     *   After you have the fastboot tool, add it to your `PATH` [environment variable](https://developer.android.google.cn/studio/command-line/variables.html#set). This command should be similar to the following:
+
+    *   如果已经装了fastboot, 加到 `PATH` [环境变量](https://developer.android.google.cn/studio/command-line/variables.html#set)里面。命令如同如下:
 
         `export PATH=$PATH:"path/to/fastboot"`
 
@@ -226,28 +236,46 @@ If you want to clear all of the saved networks on the board:
 
 ## Serial debug console
 
+## 调试串口
 * * *
 
 The serial console is a helpful tool for debugging your board and reviewing system log information. The console is the default output location for kernel log messages (i.e. `dmesg`), and it also provides access to a full shell prompt that you can use to access commands such as [logcat](https://developer.android.google.cn/tools/help/logcat.html). This is helpful if you are unable to access ADB on your board through other means and have not yet enabled a network connection.
 
+串口是很有用的调试板子看系统打印信息的工具。 串口是内核打印信息的缺省输出口 (例如 `dmesg`), 串口能提供一个完全的命令行终端来执行类似 [logcat](https://developer.android.google.cn/tools/help/logcat.html)的命令。 如果此时板子不能用 ADB 命令来访问同时也不能联网时会特别有用。
+
 To access the serial console:
+
+连接串口:
 
 **For Pico i.MX6UL:** Connect a micro USB cable to the debug interface as shown below.
 
+**对 Pico i.MX6UL板:** 如下连 micro USB 线连到调试接口上
 ![""](https://developer.android.google.cn/things/images/pico7-console.png)
 
 **For SprIoT i.MX6UL:** Connect a Micro-USB cable to the board as shown below.
 
+
+**对 SprIoT i.MX6UL板:** 如下把 Micro-USB 线连到板子上。
 ![""](https://developer.android.google.cn/things/images/spriot-console.png)
 
 **For Argon i.MX6UL:** Connect a USB Type B cable to the board as shown below.
 
+**对 Argon i.MX6UL板:** 如下把 USB Type B 线连到板子上。
 ![""](https://developer.android.google.cn/things/images/vvdn-console.png)
 
 Open a connection to the USB serial device on your development computer using a terminal program, such as [PuTTY](http://www.putty.org/) (Windows), [Serial](https://www.decisivetactics.com/products/serial/) (Mac OS), or [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux). The serial port parameters for the console are as follows:
 
+使用串口终端程序在你的PC上打开 USB 串口设备, 例如 [PuTTY](http://www.putty.org/) (Windows下面), [Serial](https://www.decisivetactics.com/products/serial/) (Mac 下), 或者 [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux下)。串口的参数设置如下:
 *   **Baud Rate**: 115200
+
+*   **比特率**: 115200
 *   **Data Bits**: 8
+
+*   **数据位**: 8
 *   **Parity**: None
+
+*   **奇偶性**: None
 *   **Stop Bits**: 1
+
+*   **停止位**: 1
 
