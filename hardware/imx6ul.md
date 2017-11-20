@@ -196,7 +196,8 @@ Once you can access a shell prompt, follow these steps:
 
 1.  Send an intent to the Wi-Fi service that includes the SSID of your local network. Your [board](https://developer.android.google.cn/things/hardware/developer-kits.html) must support the network protocol and frequency band of the wireless network in order to establish a connection.
 
-   用下面命令给 Wi-Fi 服务发一个包含本地网络的SSID的描述。  [板子](https://developer.android.google.cn/things/hardware/developer-kits.html) 必须能支持无线网络协议和频段以建立连接。
+   用下面命令给 Wi-Fi 服务发一个包含本地网络的SSID的描述。  [板子](https://developer.android.google.cn/things/hardware/developer-
+   kits.html) 必须能支持无线网络协议和频段以建立连接。
         $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Connect
 
    
