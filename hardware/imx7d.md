@@ -139,7 +139,8 @@ Once you can access a shell prompt, follow these steps:
     The following arguments are supported with this command:
 	
 	此命令支持以下参数：
-	<table>
+	
+    <table>
 
     <tbody>
 
