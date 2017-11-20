@@ -123,8 +123,9 @@ Use the following steps to flash the Android image:
  
  
  
-
-        $ adb reboot bootloader</span></aside>
+~~~Java
+      $ adb reboot bootloader</span></aside>
+~~~
 
 4.  Execute the `flash-all.sh` script. This script installs the necessary bootloader, baseband firmware(s), and operating system. (On Windows systems, use `flash-all.bat` instead).
 
