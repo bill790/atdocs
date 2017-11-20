@@ -1,5 +1,7 @@
 # NXP i.MX6UL
 
+# NXP i.MX6UL 平台
+
 Expanding the i.MX 6 series, the i.MX 6UltraLite is a high performance, ultra-efficient processor family featuring an advanced implementation of a single ARM® Cortex®-A7 core. The Pico variant is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
 
 从 i.MX 6 系列中扩展而来, i.MX 6UltraLite 是一个高性能，非常高效的处理器家族，采用的是单个ARM® Cortex®-A7核。 Pico 板可连接 Intel® Edison 板的传感器和低速 I/O,但也加了对多媒体和联网的扩展可能，这使得板子可以很容易的用到最新的 IoT 技术。
@@ -206,6 +208,8 @@ Once you can access a shell prompt, follow these steps:
    The following arguments are supported with this command:
 
     这个命令由下面参数支持:
+    
+ ~~~java
     <table>
 
     <tbody>
@@ -253,7 +257,7 @@ Once you can access a shell prompt, follow these steps:
     </tbody>
 
     </table>
-
+~~~
 2.  Verify that the connection was successful through `logcat`:
 
     用 `logcat` 来验证连接成功:
