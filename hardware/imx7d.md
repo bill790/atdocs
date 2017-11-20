@@ -51,55 +51,93 @@ Use the following steps to flash the Android image:
 
     *   Navigate to the Android SDK location on your computer; the path can be found in the system settings for Android Studio. Verify that the `fastboot` binary is installed in the `platform-tools/` directory.
 
+    *   找到你电脑上的 Android SDK 的位置; 路径可以在Android Studio的设置里面找到。确认 `fastboot` 在 `platform-tools/` 目录里。
+
     *   After you have the fastboot tool, add it to your `PATH` [environment variable](https://developer.android.google.cn/studio/command-line/variables.html#set). This command should be similar to the following:
+    
+    *   如果已经装了fastboot, 加到 `PATH` [环境变量](https://developer.android.google.cn/studio/command-line/variables.html#set)里面。命令如同如下:
 
         `export PATH=$PATH:"path/to/fastboot"`
 
 2.  Open a command line terminal and navigate to the unzipped image directory.
 
+    打开一个命令行终端并进到解开映像的目录。
+
 3.  Verify that the device has booted into Fastboot mode by executing the following command:
+
+    执行下面命令确保板子进入了fastboot 模式:
 
         $ fastboot devices1b2f21d4e1fe0129        fastboot
 
     <aside class="note">**Note:** <span>Your device will not boot into Fastboot mode if it was previously flashed with Android Things. You need to first execute the following command using the [adb tool](https://developer.android.google.cn/tools/help/adb.html) to reboot the device into Fastboot mode.
+    
+    <aside class="note">**Note:** <span>如何前面已经烧了Android Things 映像，板子会进入不了 fastboot 模式。 这样就需要用[adb tool](https://developer.android.google.cn/tools/help/adb.html)执行下面命令使得板子进入 fastboot 模式。
 
         $ adb reboot bootloader</span></aside>
 
 4.  Execute the `flash-all.sh` script. This script installs the necessary bootloader, baseband firmware(s), and operating system. (On Windows systems, use `flash-all.bat` instead).
 
+    执行 `flash-all.sh` 脚本。 此脚本会安装 bootloader, 基带固件, 和操作系统 (On Windows systems, use `flash-all.bat` instead).
+
     <aside class="note">**Note:** <span>The device automatically reboots into Android Things when the process is complete.</span></aside>
 
+    <aside class="note">**Note:** <span>当处理程序结束会自动启动到 Android Things 。</span></aside>
+
 5.  To verify that Android is running on the device, discover it using the [adb tool](https://developer.android.google.cn/tools/help/adb.html):
+
+    为了验证 Android 正在板子上跑，可以用 [adb tool](https://developer.android.google.cn/tools/help/adb.html)执行如下命令:
 
         $ adb wait-for-device...$ adb devicesList of devices attached1b2f21d4e1fe0129        device
 
 ## Connecting Wi-Fi
 
+## 连接 Wi-Fi
+
 * * *
 
 After flashing your board, it is strongly recommended to connect it to the internet. This allows your device to deliver crash reports and receive updates.
 
+在板子烧过后, 强烈建议要连上网。 这会让你的板子能上传崩溃报告并接受更新。
+
 <aside class="note">**Note:** <span>The device doesn't need to be on the same network as your computer.</span></aside>
 
+**注意**板子不需要和你的主机在一个网络上。</aside>
+
 Before connecting your board to a Wi-Fi network, attach an external IPEX or u.FL Wi-Fi antenna to your board as shown:
+
+在连到Wi-Fi之前, 连一根 IPEX 或者 u.FL Wi-Fi 天线到板子上如下所示
 
 ![""](https://developer.android.google.cn/things/images/pico7-antenna.png)
 
 <aside class="note">**Note:** <span>The module can't resolve Wi-Fi signals if you proceed without connecting an antenna.</span></aside>
 
+<aside class="note">**Note:** <span>如果不连接天线模块无法处理 Wi-Fi信号。</span></aside>
+
 To connect your board to Wi-Fi, first access a shell prompt on the device. You can use either of the following methods:
 
+为了连板子到 Wi-Fi, 先连上板子的 shell 终端。 可以使用下面任一种方法：
+
 *   Open a shell over adb with the `adb shell` command.
+
+*   用 adb 命令 `adb shell` 打开一个 shell 终端。
+
 *   Connect to the [serial console](#serial_debug_console).
+
+*   连 [串口](#serial_debug_console)。
 
 Once you can access a shell prompt, follow these steps:
 
+一旦连到一个 shell 终端, 按下面步骤来:
+Once you can access a shell prompt, follow these steps:
+
 1.  Send an intent to the Wi-Fi service that includes the SSID of your local network. Your [board](https://developer.android.google.cn/things/hardware/developer-kits.html) must support the network protocol and frequency band of the wireless network in order to establish a connection.
+向 Wi-Fi 服务发送带有你的本地网络 SSID 的请求。你的 [开发板](https://developer.android.google.cn/things/hardware/developer-kits.html) 必须支持无线网络协定和无线网络频率以建立连接。
 
         $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Connect
 
     The following arguments are supported with this command:
-
+	
+	此命令支持以下参数：
     <table>
 
     <tbody>
