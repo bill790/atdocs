@@ -142,143 +142,6 @@ Use the following steps to flash the Android image:
 
         $ adb wait-for-device...$ adb devicesList of devices attached1b2f21d4e1fe0129        device
 
-
-   
-   The following arguments are supported with this command:
-	
-	此命令支持以下参数：
-
-    <table>
-
-    <tbody>
-
-    <tr>
-
-    <th style="width: 240px;">Argument
-	
-	参数</th>
-
-    <th>Description
-	
-	具体细节</th>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e ssid <var>network_ssid</var>`</td>
-
-    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.
-	
-	连接到由 <var>network_ssid</var> 指定的无线网络 SSID 。此参数为必须参数</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e passphrase <var>network_pass</var>`</td>
-
-    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.
-	
-	可选操作，通过 <var>network_pass</var> 指定的密码来连接网络 SSID 。不必要操作如果你的网络不需要密码。</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e passphrase64 <var>encoded_pass</var>`</td>
-
-    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.
-	
-	可选操作，设置密码 `passphrase` 可用特殊字符 (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`)。使用 [base64 encoding](https://www.base64encode.org/) 来指定 <var>encoded_pass</var> 的值</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`--ez hidden true`</td>
-
-    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.
-	
-	可选操作，用来表明此命令中的 SSID 不可见。如果省略，此值会被默认为 false</td>
-
-    </tr>
-
-    </tbody>
-
-    </table>
-
-2.  Verify that the connection was successful through `logcat`:
-
-    用 `logcat` 来验证连接成功:
-
-        $ logcat -d | grep Wifi...V WifiWatcher: Network state changed to CONNECTEDV WifiWatcher: SSID changed: ...I WifiConfigurator: Successfully connected to ...
-
-3.  Test that you can access a remote IP address:
-
-    可以用访问一个远程 IP 地址来测试：
-
-        $ ping 8.8.8.8PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=6.67 ms64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=55.5 ms64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=23.0 ms64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=245 ms
-
-4.  Check that the date and time are set correctly on the device:
-
-     用如下命令来检查时间和日期在板子上设置
-     
-        $ date
-
-    <aside class="note">**Note:** <span>An incorrect date or time may cause SSL errors. Restart the device to automatically set the correct date and time from a time server.</span></aside>
-
-If you want to clear all of the saved networks on the board:
-
-如果你想清除所有板子上保存下来的网络:
-
-    $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Reset
-
-## Serial debug console
-
-## 调试串口
-* * *
-
-The serial console is a helpful tool for debugging your board and reviewing system log information. The console is the default output location for kernel log messages (i.e. `dmesg`), and it also provides access to a full shell prompt that you can use to access commands such as [logcat](https://developer.android.google.cn/tools/help/logcat.html). This is helpful if you are unable to access ADB on your board through other means and have not yet enabled a network connection.
-
-串口是很有用的调试板子看系统打印信息的工具。 串口是内核打印信息的缺省输出口 (例如 `dmesg`), 串口能提供一个完全的命令行终端来执行类似 [logcat](https://developer.android.google.cn/tools/help/logcat.html)的命令。 如果此时板子不能用 ADB 命令来访问同时也不能联网时会特别有用。
-
-To access the serial console:
-
-连接串口:
-
-**For Pico i.MX6UL:** Connect a micro USB cable to the debug interface as shown below.
-
-**对 Pico i.MX6UL板:** 如下连 micro USB 线连到调试接口上
-![""](https://developer.android.google.cn/things/images/pico7-console.png)
-
-**For SprIoT i.MX6UL:** Connect a Micro-USB cable to the board as shown below.
-
-
-**对 SprIoT i.MX6UL板:** 如下把 Micro-USB 线连到板子上。
-![""](https://developer.android.google.cn/things/images/spriot-console.png)
-
-**For Argon i.MX6UL:** Connect a USB Type B cable to the board as shown below.
-
-**对 Argon i.MX6UL板:** 如下把 USB Type B 线连到板子上。
-![""](https://developer.android.google.cn/things/images/vvdn-console.png)
-
-Open a connection to the USB serial device on your development computer using a terminal program, such as [PuTTY](http://www.putty.org/) (Windows), [Serial](https://www.decisivetactics.com/products/serial/) (Mac OS), or [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux). The serial port parameters for the console are as follows:
-
-使用串口终端程序在你的PC上打开 USB 串口设备, 例如 [PuTTY](http://www.putty.org/) (Windows下面), [Serial](https://www.decisivetactics.com/products/serial/) (Mac 下), 或者 [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux下)。串口的参数设置如下:
-*   **Baud Rate**: 115200
-
-*   **比特率**: 115200
-*   **Data Bits**: 8
-
-*   **数据位**: 8
-*   **Parity**: None
-
-*   **奇偶性**: None
-*   **Stop Bits**: 1
-
-*   **停止位**: 1
-
 ## Connecting Wi-Fi
 
 ## 连接 Wi-Fi
@@ -432,3 +295,49 @@ Open a connection to the USB serial device on your development computer using a 
 *   **Stop Bits**: 1
 
 *	**停止字节**： 1
+
+## Serial debug console
+
+## 调试串口
+* * *
+
+The serial console is a helpful tool for debugging your board and reviewing system log information. The console is the default output location for kernel log messages (i.e. `dmesg`), and it also provides access to a full shell prompt that you can use to access commands such as [logcat](https://developer.android.google.cn/tools/help/logcat.html). This is helpful if you are unable to access ADB on your board through other means and have not yet enabled a network connection.
+
+串口是很有用的调试板子看系统打印信息的工具。 串口是内核打印信息的缺省输出口 (例如 `dmesg`), 串口能提供一个完全的命令行终端来执行类似 [logcat](https://developer.android.google.cn/tools/help/logcat.html)的命令。 如果此时板子不能用 ADB 命令来访问同时也不能联网时会特别有用。
+
+To access the serial console:
+
+连接串口:
+
+**For Pico i.MX6UL:** Connect a micro USB cable to the debug interface as shown below.
+
+**对 Pico i.MX6UL板:** 如下连 micro USB 线连到调试接口上
+![""](https://developer.android.google.cn/things/images/pico7-console.png)
+
+**For SprIoT i.MX6UL:** Connect a Micro-USB cable to the board as shown below.
+
+
+**对 SprIoT i.MX6UL板:** 如下把 Micro-USB 线连到板子上。
+![""](https://developer.android.google.cn/things/images/spriot-console.png)
+
+**For Argon i.MX6UL:** Connect a USB Type B cable to the board as shown below.
+
+**对 Argon i.MX6UL板:** 如下把 USB Type B 线连到板子上。
+![""](https://developer.android.google.cn/things/images/vvdn-console.png)
+
+Open a connection to the USB serial device on your development computer using a terminal program, such as [PuTTY](http://www.putty.org/) (Windows), [Serial](https://www.decisivetactics.com/products/serial/) (Mac OS), or [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux). The serial port parameters for the console are as follows:
+
+使用串口终端程序在你的PC上打开 USB 串口设备, 例如 [PuTTY](http://www.putty.org/) (Windows下面), [Serial](https://www.decisivetactics.com/products/serial/) (Mac 下), 或者 [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux下)。串口的参数设置如下:
+*   **Baud Rate**: 115200
+
+*   **比特率**: 115200
+*   **Data Bits**: 8
+
+*   **数据位**: 8
+*   **Parity**: None
+
+*   **奇偶性**: None
+*   **Stop Bits**: 1
+
+*   **停止位**: 1
+
