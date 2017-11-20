@@ -150,21 +150,47 @@ Use the following steps to flash the Android image:
 
 After flashing your board, it is strongly recommended to connect it to the internet. This allows your device to deliver crash reports and receive updates.
 
-在编译完你的开发板之后，强烈推荐将它连上网。这可以让你的设备发送崩溃报告和获取更新。
+在板子烧过后, 强烈建议要连上网。 这会让你的板子能上传崩溃报告并接受更新。
 
 <aside class="note">**Note:** <span>The device doesn't need to be on the same network as your computer.</span>
-					**注意**你的设备不必和你的电脑使用相同的网络。</aside>
+					**注意**板子不需要和你的主机在一个网络上。</aside>
+					
+Before connecting your board to a Wi-Fi network, attach an external IPEX or u.FL Wi-Fi antenna to your board as shown:
+
+在连到Wi-Fi之前, 连一根 IPEX 或者 u.FL Wi-Fi 天线到板子上如下所示:
+
+**For Pico i.MX6UL:**
+
+**对于 Pico i.MX6UL板:**
+
+![""](https://developer.android.google.cn/things/images/pico7-antenna.png)
+
+**For SprIoT i.MX6UL:**
+
+**对于 SprIoT i.MX6UL板:**
+
+![""](https://developer.android.google.cn/things/images/spriot-antenna.png)
+
+**对于 Argon i.MX6UL板:**
+
+![""](https://developer.android.google.cn/things/images/vvdn-antenna.png)
+
+<aside class="note">**Note:** <span>The module can't resolve Wi-Fi signals if you proceed without connecting an antenna.</span></aside>
+
+<aside class="note">**Note:** <span>如果不连接天线模块无法处理 Wi-Fi信号。</span></aside>
 
 To connect your board to Wi-Fi, first access a shell prompt on the device. You can use either of the following methods:
 
-为了将你的开发板连到 Wi-Fi ，首先访问设备上的 shell prompt 。你可以从以下操作中任选其一：
+为了连板子到 Wi-Fi, 先连上板子的 shell 终端。 可以使用下面任一种方法：
 
-*   Connect your board to your Wi-Fi router or development computer to assign it an IP address. Run the `adb connect <ip-address>` command to connect to this IP address using the [adb tool](https://developer.android.google.cn/tools/help/adb.html). Open a shell over adb with the `adb shell` command.
+*   Open a shell over adb with the `adb shell` command.
 
-*	通过将开发板和无线路由器或者电脑相连给开发板分配 IP 地址。使用 [adb 工具](https://developer.android.google.cn/tools/help/adb.html)，运行 `adb connect <ip-address>` 命令连接到 IP 地址。用 `adb shell` 命令打开一个 adb shell 。
+*   用 adb 命令 `adb shell` 打开一个 shell 终端。
+
 *   Connect to the [serial console](#serial_debug_console).
 
-*	连接到 [串行控制台](#serial_debug_console)。
+*   连 [串口](#serial_debug_console)。
+
 
 Once you can access a shell prompt, follow these steps:
 
