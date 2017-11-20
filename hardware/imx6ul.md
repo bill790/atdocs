@@ -1,5 +1,7 @@
 # NXP i.MX6UL
 
+# NXP i.MX6UL 平台
+
 Expanding the i.MX 6 series, the i.MX 6UltraLite is a high performance, ultra-efficient processor family featuring an advanced implementation of a single ARM® Cortex®-A7 core. The Pico variant is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
 
 从 i.MX 6 系列中扩展而来, i.MX 6UltraLite 是一个高性能，非常高效的处理器家族，采用的是单个ARM® Cortex®-A7核。 Pico 板可连接 Intel® Edison 板的传感器和低速 I/O,但也加了对多媒体和联网的扩展可能，这使得板子可以很容易的用到最新的 IoT 技术。
@@ -46,7 +48,6 @@ Connect the board to your host computer:
     把板子上的USB OTG接口和主机之间用 USB-C线连起来。
     
 
-    
 **For SprIoT i.MX6UL:**
 
 **对于 SprIoT i.MX6UL板:**
@@ -125,23 +126,84 @@ Use the following steps to flash the Android image:
  
  
 
-        $ adb reboot bootloader</span></aside>
+      $ adb reboot bootloader</span></aside>
 
 4.  Execute the `flash-all.sh` script. This script installs the necessary bootloader, baseband firmware(s), and operating system. (On Windows systems, use `flash-all.bat` instead).
 
    执行 `flash-all.sh` 脚本。 此脚本会安装 bootloader, 基带固件, 和操作系统 (On Windows systems, use `flash-all.bat` instead).
 
     <aside class="note">**Note:** <span>The device automatically reboots into Android Things when the process is complete.</span></aside>
-
+    
+    <aside class="note">**Note:** <span>当处理程序结束会自动启动到 Android Things 。</span></aside>
+     
 5.  To verify that Android is running on the device, discover it using the [adb tool](https://developer.android.google.cn/tools/help/adb.html):
 
    为了验证 Android 正在板子上跑，可以用 [adb tool](https://developer.android.google.cn/tools/help/adb.html)执行如下命令:
 
         $ adb wait-for-device...$ adb devicesList of devices attached1b2f21d4e1fe0129        device
 
+## Connecting Wi-Fi
 
+* * *
 
+After flashing your board, it is strongly recommended to connect it to the internet. This allows your device to deliver crash reports and receive updates.
 
+在板子烧过后, 强烈建议要连上网。 这会让你的板子能上传崩溃报告并接受更新。
+
+<aside class="note">**Note:** <span>The device doesn't need to be on the same network as your computer.</span></aside>
+
+<aside class="note">**Note:** <span>板子不需要和你的主机在一个网络上</span></aside>
+
+Before connecting your board to a Wi-Fi network, attach an external IPEX or u.FL Wi-Fi antenna to your board as shown:
+
+在连到Wi-Fi之前, 连一根 IPEX 或者 u.FL Wi-Fi 天线到板子上如下所示:
+
+**For Pico i.MX6UL:**
+
+**对于 Pico i.MX6UL板:**
+
+![""](https://developer.android.google.cn/things/images/pico7-antenna.png)
+
+**For SprIoT i.MX6UL:**
+
+**对于 SprIoT i.MX6UL板:**
+
+![""](https://developer.android.google.cn/things/images/spriot-antenna.png)
+
+**对于 Argon i.MX6UL板:**
+
+![""](https://developer.android.google.cn/things/images/vvdn-antenna.png)
+
+<aside class="note">**Note:** <span>The module can't resolve Wi-Fi signals if you proceed without connecting an antenna.</span></aside>
+
+<aside class="note">**Note:** <span>如果不连接天线模块无法处理 Wi-Fi信号。</span></aside>
+
+To connect your board to Wi-Fi, first access a shell prompt on the device. You can use either of the following methods:
+
+为了连板子到 Wi-Fi, 先连上板子的 shell 终端。 可以使用下面任一种方法：
+
+*   Open a shell over adb with the `adb shell` command.
+
+*   用 adb 命令 `adb shell` 打开一个 shell 终端。
+
+*   Connect to the [serial console](#serial_debug_console).
+
+*   连 [串口](#serial_debug_console)。
+
+Once you can access a shell prompt, follow these steps:
+
+一旦连到一个 shell 终端, 按下面步骤来:
+
+1.  Send an intent to the Wi-Fi service that includes the SSID of your local network. Your [board](https://developer.android.google.cn/things/hardware/developer-kits.html) must support the network protocol and frequency band of the wireless network in order to establish a connection.
+
+   用下面命令给 Wi-Fi 服务发一个包含本地网络的SSID的描述。  [板子](https://developer.android.google.cn/things/hardware/developer-kits.html) 必须能支持无线网络协议和频段以建立连接。
+        $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Connect
+
+   
+   
+   The following arguments are supported with this command:
+	
+	此命令支持以下参数：
 
     <table>
 
@@ -149,9 +211,13 @@ Use the following steps to flash the Android image:
 
     <tr>
 
-    <th style="width: 240px;">Argument</th>
+    <th style="width: 240px;">Argument
+	
+	参数</th>
 
-    <th>Description</th>
+    <th>Description
+	
+	具体细节</th>
 
     </tr>
 
@@ -159,7 +225,9 @@ Use the following steps to flash the Android image:
 
     <td>`-e ssid <var>network_ssid</var>`</td>
 
-    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.</td>
+    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.
+	
+	连接到由 <var>network_ssid</var> 指定的无线网络 SSID 。此参数为必须参数</td>
 
     </tr>
 
@@ -167,7 +235,9 @@ Use the following steps to flash the Android image:
 
     <td>`-e passphrase <var>network_pass</var>`</td>
 
-    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.</td>
+    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.
+	
+	可选操作，通过 <var>network_pass</var> 指定的密码来连接网络 SSID 。不必要操作如果你的网络不需要密码。</td>
 
     </tr>
 
@@ -175,7 +245,9 @@ Use the following steps to flash the Android image:
 
     <td>`-e passphrase64 <var>encoded_pass</var>`</td>
 
-    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.</td>
+    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.
+	
+	可选操作，设置密码 `passphrase` 可用特殊字符 (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`)。使用 [base64 encoding](https://www.base64encode.org/) 来指定 <var>encoded_pass</var> 的值</td>
 
     </tr>
 
@@ -183,7 +255,9 @@ Use the following steps to flash the Android image:
 
     <td>`--ez hidden true`</td>
 
-    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.</td>
+    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.
+	
+	可选操作，用来表明此命令中的 SSID 不可见。如果省略，此值会被默认为 false</td>
 
     </tr>
 
@@ -193,46 +267,225 @@ Use the following steps to flash the Android image:
 
 2.  Verify that the connection was successful through `logcat`:
 
+    用 `logcat` 来验证连接成功:
+
         $ logcat -d | grep Wifi...V WifiWatcher: Network state changed to CONNECTEDV WifiWatcher: SSID changed: ...I WifiConfigurator: Successfully connected to ...
 
 3.  Test that you can access a remote IP address:
+
+    可以用访问一个远程 IP 地址来测试：
 
         $ ping 8.8.8.8PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=6.67 ms64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=55.5 ms64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=23.0 ms64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=245 ms
 
 4.  Check that the date and time are set correctly on the device:
 
-        $ date
+     用如下命令来检查时间和日期在板子上设置
+     
+        $ date
 
     <aside class="note">**Note:** <span>An incorrect date or time may cause SSL errors. Restart the device to automatically set the correct date and time from a time server.</span></aside>
 
 If you want to clear all of the saved networks on the board:
 
+如果你想清除所有板子上保存下来的网络:
+
     $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Reset
 
 ## Serial debug console
+
+## 调试串口
+* * *
+
+The serial console is a helpful tool for debugging your board and reviewing system log information. The console is the default output location for kernel log messages (i.e. `dmesg`), and it also provides access to a full shell prompt that you can use to access commands such as [logcat](https://developer.android.google.cn/tools/help/logcat.html). This is helpful if you are unable to access ADB on your board through other means and have not yet enabled a network connection.
+
+串口是很有用的调试板子看系统打印信息的工具。 串口是内核打印信息的缺省输出口 (例如 `dmesg`), 串口能提供一个完全的命令行终端来执行类似 [logcat](https://developer.android.google.cn/tools/help/logcat.html)的命令。 如果此时板子不能用 ADB 命令来访问同时也不能联网时会特别有用。
+
+To access the serial console:
+
+连接串口:
+
+**For Pico i.MX6UL:** Connect a micro USB cable to the debug interface as shown below.
+
+**对 Pico i.MX6UL板:** 如下连 micro USB 线连到调试接口上
+![""](https://developer.android.google.cn/things/images/pico7-console.png)
+
+**For SprIoT i.MX6UL:** Connect a Micro-USB cable to the board as shown below.
+
+
+**对 SprIoT i.MX6UL板:** 如下把 Micro-USB 线连到板子上。
+![""](https://developer.android.google.cn/things/images/spriot-console.png)
+
+**For Argon i.MX6UL:** Connect a USB Type B cable to the board as shown below.
+
+**对 Argon i.MX6UL板:** 如下把 USB Type B 线连到板子上。
+![""](https://developer.android.google.cn/things/images/vvdn-console.png)
+
+Open a connection to the USB serial device on your development computer using a terminal program, such as [PuTTY](http://www.putty.org/) (Windows), [Serial](https://www.decisivetactics.com/products/serial/) (Mac OS), or [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux). The serial port parameters for the console are as follows:
+
+使用串口终端程序在你的PC上打开 USB 串口设备, 例如 [PuTTY](http://www.putty.org/) (Windows下面), [Serial](https://www.decisivetactics.com/products/serial/) (Mac 下), 或者 [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux下)。串口的参数设置如下:
+*   **Baud Rate**: 115200
+
+*   **比特率**: 115200
+*   **Data Bits**: 8
+
+*   **数据位**: 8
+*   **Parity**: None
+
+*   **奇偶性**: None
+*   **Stop Bits**: 1
+
+*   **停止位**: 1
+
+## Connecting Wi-Fi
+
+## 连接 Wi-Fi
+
+* * *
+
+After flashing your board, it is strongly recommended to connect it to the internet. This allows your device to deliver crash reports and receive updates.
+
+在编译完你的开发板之后，强烈推荐将它连上网。这可以让你的设备发送崩溃报告和获取更新。
+
+<aside class="note">**Note:** <span>The device doesn't need to be on the same network as your computer.</span>
+					**注意**你的设备不必和你的电脑使用相同的网络。</aside>
+
+To connect your board to Wi-Fi, first access a shell prompt on the device. You can use either of the following methods:
+
+为了将你的开发板连到 Wi-Fi ，首先访问设备上的 shell prompt 。你可以从以下操作中任选其一：
+
+*   Connect your board to your Wi-Fi router or development computer to assign it an IP address. Run the `adb connect <ip-address>` command to connect to this IP address using the [adb tool](https://developer.android.google.cn/tools/help/adb.html). Open a shell over adb with the `adb shell` command.
+
+*	通过将开发板和无线路由器或者电脑相连给开发板分配 IP 地址。使用 [adb 工具](https://developer.android.google.cn/tools/help/adb.html)，运行 `adb connect <ip-address>` 命令连接到 IP 地址。用 `adb shell` 命令打开一个 adb shell 。
+*   Connect to the [serial console](#serial_debug_console).
+
+*	连接到 [串行控制台](#serial_debug_console)。
+
+Once you can access a shell prompt, follow these steps:
+
+访问 Shell prompt 后，参照以下步骤：
+1.  Send an intent to the Wi-Fi service that includes the SSID of your local network. Your [board](https://developer.android.google.cn/things/hardware/developer-kits.html) must support the network protocol and frequency band of the wireless network in order to establish a connection.
+
+    向 Wi-Fi 服务发送带有你的本地网络 SSID 的请求。你的 [开发板](https://developer.android.google.cn/things/hardware/developer-kits.html) 必须支持无线网络协定和无线网络频率以建立连接。
+
+        $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Connect
+
+    The following arguments are supported with this command:
+	
+	此命令支持以下参数：
+
+    <table>
+
+    <tbody>
+
+    <tr>
+
+    <th style="width: 240px;">Argument
+	
+	参数</th>
+
+    <th>Description
+	
+	具体细节</th>
+
+    </tr>
+
+    <tr>
+
+    <td>`-e ssid <var>network_ssid</var>`</td>
+
+    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.
+	
+	连接到由 <var>network_ssid</var> 指定的无线网络 SSID 。此参数为必须参数</td>
+
+    </tr>
+
+    <tr>
+
+    <td>`-e passphrase <var>network_pass</var>`</td>
+
+    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.
+	
+	可选操作，通过 <var>network_pass</var> 指定的密码来连接网络 SSID 。不必要操作如果你的网络不需要密码。</td>
+
+    </tr>
+
+    <tr>
+
+    <td>`-e passphrase64 <var>encoded_pass</var>`</td>
+
+    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.
+	
+	可选操作，设置密码 `passphrase` 可用特殊字符 (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`)。使用 [base64 encoding](https://www.base64encode.org/) 来指定 <var>encoded_pass</var> 的值</td>
+
+    </tr>
+
+    <tr>
+
+    <td>`--ez hidden true`</td>
+
+    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.
+	
+	可选操作，用来表明此命令中的 SSID 不可见。如果省略，此值会被默认为 false</td>
+
+    </tr>
+
+    </tbody>
+
+    </table>
+
+2.  Verify that the connection was successful through `logcat`:
+
+    通过 `logcat` 确认连接成功：
+
+        $ logcat -d | grep Wifi...V WifiWatcher: Network state changed to CONNECTEDV WifiWatcher: SSID changed: ...I WifiConfigurator: Successfully connected to ...
+
+3.  Test that you can access a remote IP address:
+
+    测试你可以访问远程 IP 地址：
+
+        $ ping 8.8.8.8PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=6.67 ms64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=55.5 ms64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=23.0 ms64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=245 ms
+
+4.  Check that the date and time are set correctly on the device:
+
+    确认设备上的日期与时间设置正确：
+
+        $ date
+
+    <aside class="note">**Note:** <span>An incorrect date or time may cause SSL errors. Restart the device to automatically set the correct date and time from a time server.</span>
+						**注意** <span>不正确的日期或者时间可能造成 SSL 错误。重启设备从服务器自动获取正确的日期和时间</aside>
+
+If you want to clear all of the saved networks on the board:
+
+如果你要清空开发板上所有已存的网络：
+
+    $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Reset
+
+## Serial debug console
+
+## 串行调试控制台
 
 * * *
 
 The serial console is a helpful tool for debugging your board and reviewing system log information. The console is the default output location for kernel log messages (i.e. `dmesg`), and it also provides access to a full shell prompt that you can use to access commands such as [logcat](https://developer.android.google.cn/tools/help/logcat.html). This is helpful if you are unable to access ADB on your board through other means and have not yet enabled a network connection.
 
-To access the serial console:
+串行控制台是一个用于调试你的开发板和浏览系统信息非常有效的工具。控制台是默认的内核日志信息输出地址(`dmesg`)。
+To access the serial console, connect a [USB to TTL Serial Cable](https://www.adafruit.com/products/954) to the device UART pins as shown below.
 
-**For Pico i.MX6UL:** Connect a micro USB cable to the debug interface as shown below.
-
-![""](https://developer.android.google.cn/things/images/pico7-console.png)
-
-**For SprIoT i.MX6UL:** Connect a Micro-USB cable to the board as shown below.
-
-![""](https://developer.android.google.cn/things/images/spriot-console.png)
-
-**For Argon i.MX6UL:** Connect a USB Type B cable to the board as shown below.
-
-![""](https://developer.android.google.cn/things/images/vvdn-console.png)
+你可以通过以下的方式连接一条 [USB to TTL 串行线](https://www.adafruit.com/products/954) 到设备的 UART 口来访问串行控制台
+![""](https://developer.android.google.cn/things/images/raspberrypi-console.png)
 
 Open a connection to the USB serial device on your development computer using a terminal program, such as [PuTTY](http://www.putty.org/) (Windows), [Serial](https://www.decisivetactics.com/products/serial/) (Mac OS), or [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux). The serial port parameters for the console are as follows:
 
+使用一个终端程序，比如 [PuTTY](http://www.putty.org/) (Windows)、[Serial](https://www.decisivetactics.com/products/serial/) (Mac OS)、[Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux)，打开在你的电脑上到 USB 设备的连接。具体控制台串行接口参数如下：
 *   **Baud Rate**: 115200
+
+*	**波特率**： 115200
 *   **Data Bits**: 8
+
+*	**数据字节**： 8
 *   **Parity**: None
+
+*	**奇偶校检**： 无
 *   **Stop Bits**: 1
 
+*	**停止字节**： 1
