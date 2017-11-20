@@ -1,10 +1,10 @@
 # NXP i.MX7D
 
-# NXP i.MX7D 处理器
+# NXP i.MX7D 平台
 
 The i.MX 7Dual delivers high-performance processing for low-power requirements with a high degree of functional integration. The i.MX 7Dual features an advanced implementation of two ARM®Cortex®-A7 cores, which operate at speeds of up to 1.2 GHz, as well as the ARM® Cortex®-M4 core. The Pico variant is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
 
-i.MX 7Dual处理器是带有高度功能集成、低功耗、高性能的, 工作频率最高到 1.2 GHz, 核心是 ARM® Cortex®-M4。 Pico 板可连接 Intel® Edison 板的传感器和低速 I/O,但也加了对多媒体和联网的扩展可能，这使得板子可以很容易的用到最新的 IoT 技术。
+i.MX 7Dual处理器是带有高度功能集成、低功耗、高性能的, 工作频率最高到 1.2 GHz, 核心是 ARM® Cortex®-M4。Pico 板和 Intel® Edison 板对传感器和低速 I/O 来讲是管脚兼容的,但也加了对多媒体和联网的扩展可能，这使得板子可以很容易的用到最新的 IoT 技术。
 ![""](https://developer.android.google.cn/things/images/nxp-pico7-board.png)
 
 ## Flashing the image
@@ -15,25 +15,39 @@ i.MX 7Dual处理器是带有高度功能集成、低功耗、高性能的, 工�
 
 Before you begin flashing, you will need the following items in addition to your board:
 
-Before you begin flashing, you will need the following items in addition to your board:
+烧录前除了板子还需要下面几项:
 
 *   USB-C cable
-
+    
+   USB-C 线
+    
 To flash Android Things onto your board, download the latest preview image in the [Android Things Console](https://partner.android.com/things/console) (see the [release notes](https://developer.android.google.cn/things/preview/releases.html)) and follow these steps:
+
+为了烧录 Android Things 到板子上, 从 [Android Things Console](https://partner.android.com/things/console) 下载最新的映像(看下 [release notes](https://developer.android.google.cn/things/preview/releases.html)) 并按一下步骤来做:
 
 ### Step 1: Connect the Hardware
 
+### Step 1: 连上硬件
+
 Connect the board to your host computer as shown below:
+
+连接板子到主机如下图：
 
 ![""](https://developer.android.google.cn/things/images/pico7-connections.png)
 
 1.  Connect a USB-C cable from your host computer for Power and USB OTG.
 
+    把板子上的USB OTG接口和主机之间用 USB-C 线连起来。
+
 ### Step 2: Flash Android Things
+
+### 第二步： 烧录 Anroid Things 
 
 Use the following steps to flash the Android image:
 
 1.  Download and install [Android Studio](https://developer.android.google.cn/studio/index.html) or the [`sdkmanager`](https://developer.android.google.cn/studio/command-line/sdkmanager.html) command-line tool. Update the Android SDK Platform Tools to version 25.0.3 or later from the [SDK Manager](https://developer.android.google.cn/studio/intro/update.html#sdk-manager).
+
+下载并安装 [Android Studio](https://developer.android.google.cn/studio/index.html) 或者安装 [`sdkmanager`](https://developer.android.google.cn/studio/command-line/sdkmanager.html) 命令行工具。从 [SDK Manager](https://developer.android.google.cn/studio/intro/update.html#sdk-manager)更新 Android SDK Platform Tools 到 25.0.3 版或者更新版本。
 
     *   Navigate to the Android SDK location on your computer; the path can be found in the system settings for Android Studio. Verify that the `fastboot` binary is installed in the `platform-tools/` directory.
 
