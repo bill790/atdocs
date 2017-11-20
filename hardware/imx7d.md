@@ -138,15 +138,19 @@ Once you can access a shell prompt, follow these steps:
     The following arguments are supported with this command:
 	
 	此命令支持以下参数：
-    <table>
+   <table>
 
     <tbody>
 
     <tr>
 
-    <th style="width: 240px;">Argument</th>
+    <th style="width: 240px;">Argument
+	
+	参数</th>
 
-    <th>Description</th>
+    <th>Description
+	
+	具体细节</th>
 
     </tr>
 
@@ -154,7 +158,9 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`-e ssid <var>network_ssid</var>`</td>
 
-    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.</td>
+    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.
+	
+	连接到由 <var>network_ssid</var> 指定的无线网络 SSID 。此参数为必须参数</td>
 
     </tr>
 
@@ -162,7 +168,9 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`-e passphrase <var>network_pass</var>`</td>
 
-    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.</td>
+    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.
+	
+	可选操作，通过 <var>network_pass</var> 指定的密码来连接网络 SSID 。不必要操作如果你的网络不需要密码。</td>
 
     </tr>
 
@@ -170,7 +178,9 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`-e passphrase64 <var>encoded_pass</var>`</td>
 
-    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.</td>
+    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.
+	
+	可选操作，设置密码 `passphrase` 可用特殊字符 (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`)。使用 [base64 encoding](https://www.base64encode.org/) 来指定 <var>encoded_pass</var> 的值</td>
 
     </tr>
 
@@ -178,7 +188,9 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`--ez hidden true`</td>
 
-    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.</td>
+    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.
+	
+	可选操作，用来表明此命令中的 SSID 不可见。如果省略，此值会被默认为 false</td>
 
     </tr>
 
@@ -188,33 +200,49 @@ Once you can access a shell prompt, follow these steps:
 
 2.  Verify that the connection was successful through `logcat`:
 
+    用 `logcat`命令 确认连接成功：
+
         $ logcat -d | grep Wifi...V WifiWatcher: Network state changed to CONNECTEDV WifiWatcher: SSID changed: ...I WifiConfigurator: Successfully connected to ...
 
 3.  Test that you can access a remote IP address:
 
-        $ ping 8.8.8.8PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=6.67 ms64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=55.5 ms64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=23.0 ms64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=245 ms
+    测试能否访问远程 IP 地址：
+
+        $ ping 8.8.8.8 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=6.67 ms64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=55.5 ms64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=23.0 ms64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=245 ms
 
 4.  Check that the date and time are set correctly on the device:
 
+    确认板子上的日期与时间设置正确：
+
         $ date
 
-    <aside class="note">**Note:** <span>An incorrect date or time may cause SSL errors. Restart the device to automatically set the correct date and time from a time server.</span></aside>
+    <aside class="note">**Note:** <span>An incorrect date or time may cause SSL errors. Restart the device to automatically set the correct date and time from a time server.</span>
+						**注意** <span>不正确的日期或者时间可能造成 SSL 错误。重启设备从服务器自动获取正确的日期和时间</aside>
 
 If you want to clear all of the saved networks on the board:
+
+如果你要清空开发板上所有已存的网络：
 
     $ am startservice \    -n com.google.wifisetup/.WifiSetupService \    -a WifiSetupService.Reset
 
 ## Serial debug console
 
+## 调试串口
 * * *
 
 The serial console is a helpful tool for debugging your board and reviewing system log information. The console is the default output location for kernel log messages (i.e. `dmesg`), and it also provides access to a full shell prompt that you can use to access commands such as [logcat](https://developer.android.google.cn/tools/help/logcat.html). This is helpful if you are unable to access ADB on your board through other means and have not yet enabled a network connection.
 
-To access the serial console, connect a micro USB cable to the board as shown below.
+串口是很有用的调试板子看系统打印信息的工具。 串口是内核打印信息的缺省输出口 (例如 `dmesg`), 串口能提供一个完全的命令行终端来执行类似 [logcat](https://developer.android.google.cn/tools/help/logcat.html)的命令。 如果此时板子不能用 ADB 命令来访问同时也不能联网时会特别有用。
+
+To access the serial console:
+
+连接串口:
 
 ![""](https://developer.android.google.cn/things/images/pico7-console.png)
 
 Open a connection to the USB serial device on your development computer using a terminal program, such as [PuTTY](http://www.putty.org/) (Windows), [Serial](https://www.decisivetactics.com/products/serial/) (Mac OS), or [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux). The serial port parameters for the console are as follows:
+
+使用串口终端程序在你的PC上打开 USB 串口设备, 例如 [PuTTY](http://www.putty.org/) (Windows下面), [Serial](https://www.decisivetactics.com/products/serial/) (Mac 下), 或者 [Minicom](https://en.wikipedia.org/wiki/Minicom) (Linux下)。串口的参数设置如下:
 
 *   **Baud Rate**: 115200
 *   **Data Bits**: 8
