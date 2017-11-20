@@ -301,7 +301,8 @@ If you want to clear all of the saved networks on the board:
 
 The serial console is a helpful tool for debugging your board and reviewing system log information. The console is the default output location for kernel log messages (i.e. `dmesg`), and it also provides access to a full shell prompt that you can use to access commands such as [logcat](https://developer.android.google.cn/tools/help/logcat.html). This is helpful if you are unable to access ADB on your board through other means and have not yet enabled a network connection.
 
-串行控制台是一个用于调试你的开发板和浏览系统信息非常有效的工具。控制台是默认的内核日志信息输出地址(`dmesg`)。
+串行控制台是一个用于调试你的开发板和浏览系统信息非常有效的工具。内核日志信息默认输出到串口控制台(`dmesg`)。
+
 To access the serial console, connect a [USB to TTL Serial Cable](https://www.adafruit.com/products/954) to the device UART pins as shown below.
 
 你可以通过以下的方式连接一条 [USB to TTL 串行线](https://www.adafruit.com/products/954) 到设备的 UART 口来访问串行控制台
