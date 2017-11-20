@@ -125,9 +125,8 @@ Use the following steps to flash the Android image:
  
  
  
-~~~Java
+
       $ adb reboot bootloader</span></aside>
-~~~
 
 4.  Execute the `flash-all.sh` script. This script installs the necessary bootloader, baseband firmware(s), and operating system. (On Windows systems, use `flash-all.bat` instead).
 
@@ -202,71 +201,23 @@ Once you can access a shell prompt, follow these steps:
 
    
    
-   
-   
    The following arguments are supported with this command:
+	
+	此命令支持以下参数：
 
-    这个命令由下面参数支持:
-    
- ~~~java
     <table>
 
     <tbody>
 
     <tr>
 
-    <th style="width: 240px;">Argument</th>
+    <th style="width: 240px;">Argument
+	
+	参数</th>
 
-    <th>Description</th>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e ssid <var>network_ssid</var>`</td>
-
-    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e passphrase <var>network_pass</var>`</td>
-
-    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`-e passphrase64 <var>encoded_pass</var>`</td>
-
-    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.</td>
-
-    </tr>
-
-    <tr>
-
-    <td>`--ez hidden true`</td>
-
-    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.</td>
-
-    </tr>
-
-    </tbody>
-
-    </table>
-~~~
-
- <table>
-
-    <tbody>
-
-    <tr>
-
-    <th style="width: 240px;">Argument</th>
-
-    <th>Description</th>
+    <th>Description
+	
+	具体细节</th>
 
     </tr>
 
@@ -274,7 +225,9 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`-e ssid <var>network_ssid</var>`</td>
 
-    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.</td>
+    <td>Connect to the wireless network SSID specified by <var>network_ssid</var>. _This argument is required_.
+	
+	连接到由 <var>network_ssid</var> 指定的无线网络 SSID 。此参数为必须参数</td>
 
     </tr>
 
@@ -282,7 +235,9 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`-e passphrase <var>network_pass</var>`</td>
 
-    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.</td>
+    <td>Optional argument to use the passcode specified by <var>network_pass</var> to connect to the network SSID. This argument is not necessary if your network doesn't require a passcode.
+	
+	可选操作，通过 <var>network_pass</var> 指定的密码来连接网络 SSID 。不必要操作如果你的网络不需要密码。</td>
 
     </tr>
 
@@ -290,7 +245,9 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`-e passphrase64 <var>encoded_pass</var>`</td>
 
-    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.</td>
+    <td>Optional argument used in place of `passphrase` for passcodes with special characters (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`). Use [base64 encoding](https://www.base64encode.org/) to specify the value for <var>encoded_pass</var>.
+	
+	可选操作，设置密码 `passphrase` 可用特殊字符 (`space, !, ", $, &, ', (, ), ;, <, >, `, or |`)。使用 [base64 encoding](https://www.base64encode.org/) 来指定 <var>encoded_pass</var> 的值</td>
 
     </tr>
 
@@ -298,13 +255,16 @@ Once you can access a shell prompt, follow these steps:
 
     <td>`--ez hidden true`</td>
 
-    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.</td>
+    <td>Optional argument to indicate that the SSID specified in this command is hidden. If omitted, this value defaults to false.
+	
+	可选操作，用来表明此命令中的 SSID 不可见。如果省略，此值会被默认为 false</td>
 
     </tr>
 
     </tbody>
 
     </table>
+
 2.  Verify that the connection was successful through `logcat`:
 
     用 `logcat` 来验证连接成功:
