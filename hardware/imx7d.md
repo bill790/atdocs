@@ -1,4 +1,7 @@
 # NXP i.MX7D
+
+# NXP i.MX7D 处理器
+
 The i.MX 7Dual delivers high-performance processing for low-power requirements with a high degree of functional integration. The i.MX 7Dual features an advanced implementation of two ARM®Cortex®-A7 cores, which operate at speeds of up to 1.2 GHz, as well as the ARM® Cortex®-M4 core. The Pico variant is pin-compatible with the Intel® Edison for sensors and low-speed I/O, but also adds additional expansion possibilities for multimedia and connectivity, giving you cutting edge technology that can easily be expanded and implemented for IoT designs.
 
 i.MX 7Dual处理器是带有高度功能集成、低功耗、高性能的, 工作频率最高到 1.2 GHz, 核心是 ARM® Cortex®-M4。 Pico 板可连接 Intel® Edison 板的传感器和低速 I/O,但也加了对多媒体和联网的扩展可能，这使得板子可以很容易的用到最新的 IoT 技术。
@@ -6,7 +9,11 @@ i.MX 7Dual处理器是带有高度功能集成、低功耗、高性能的, 工�
 
 ## Flashing the image
 
+## 烧录映像
+
 * * *
+
+Before you begin flashing, you will need the following items in addition to your board:
 
 Before you begin flashing, you will need the following items in addition to your board:
 
